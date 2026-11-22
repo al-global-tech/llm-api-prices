@@ -2,6 +2,542 @@
 
 Price changes between daily snapshots of [`prices.json`](prices.json), newest first.
 "Official list price" = the model maker's price as carried in the catalog (see [SOURCES](README.md#sources)).
+"MartLLM price" = what a buyer can count on at snapshot time (per side, the higher of the best live seller and the listed price); it moves during the day.
+Text prices are $ per 1M input / output tokens. Every day's full table is in [`history/`](history/).
+
+## 2026-11-22 (vs 2026-11-18)
+
+**Official list price changes (126)**
+
+| Model | Category | Before | After | Change |
+|---|---|---|---|---|
+| [MiniMax H3](https://martllm.com/models/minimax/minimax-h3) | video | $0.13 / sec | $0.04 / sec | −69% |
+| [MiniMax H3 Reference](https://martllm.com/models/minimax/minimax-h3-reference-to-video) | video | $0.13 / sec | $0.04 / sec | −69% |
+| [DeepSeek V4.1 Flash 1017](https://martllm.com/models/deepseek/deepseek-v4.1-flash-1017) | text | $0.30 / $1.20 | $0.147 / $0.60 | in −51% / out −50% |
+| [DeepSeek: DeepSeek V4 Flash Vision Exp](https://martllm.com/models/deepseek/deepseek-v4-flash-vision-exp) | text | $0.44 / $1.32 | $0.2695 / $0.8085 | −39% |
+| [DeepSeek V4.1 Flash](https://martllm.com/models/deepseek/deepseek-v4.1-flash) | text | $0.30 / $1.20 | $0.195 / $0.75 | in −35% / out −38% |
+| [DeepSeek V4 Pro](https://martllm.com/models/deepseek/deepseek-v4-pro) | text | $1.32 / $3.96 | $1.28 / $2.56 | in −3% / out −35% |
+| [Qwen3 Coder 30B A3B Instruct](https://martllm.com/models/qwen/qwen3-coder-30b-a3b-instruct) | text | $0.15 / $0.60 | $0.11 / $0.44 | −27% |
+| [Particle AI: Particle-1](https://martllm.com/models/particle-ai/particle-1) | text | $0.06 / $0.50 | $0.0525 / $0.375 | in −12% / out −25% |
+| [Meta: Muse Glimmer 30B](https://martllm.com/models/meta-llama/muse-glimmer-30b) | text | $0.35 / $1.50 | $0.30 / $1.20 | in −14% / out −20% |
+| [GPT OSS Safeguard 20B](https://martllm.com/models/openai/gpt-oss-safeguard-20b) | text | $0.075 / $0.30 | $0.0725 / $0.25 | in −3% / out −17% |
+| [NVIDIA Nemotron 3.5 Lightning 30B](https://martllm.com/models/nvidia/nemotron-3-5-lightning-30b-a3b) | text | $0.07 / $0.20 | $0.06 / $0.20 | in −14% / out 0% |
+| [Gemma 3 4B IT](https://martllm.com/models/google/gemma-3-4b-it) | text | $0.05 / $0.10 | $0.045 / $0.09 | −10% |
+| [GLM 5.1 E2EE](https://martllm.com/models/z-ai/e2ee-glm-5.1) | text | $1.40 / $4.40 | $1.26 / $3.96 | −10% |
+| [GLM 5.1](https://martllm.com/models/z-ai/glm-5.1) | text | $1.40 / $4.40 | $1.26 / $3.96 | −10% |
+| [Gemini 3.8 Flash](https://martllm.com/models/google/gemini-3.8-flash) | text | $0.825 / $4.12 | $0.75 / $3.75 | −9% |
+| [Qwen3 Next 80B A3B](https://martllm.com/models/qwen/qwen3-next-80b-a3b-instruct) | text | $0.10 / $1.10 | $0.095 / $1.10 | in −5% / out 0% |
+| [GLM-5](https://martllm.com/models/z-ai/glm-5) | text | $1.00 / $3.20 | $0.975 / $3.04 | in −3% / out −5% |
+| [Hailuo 02 Standard Image to Video](https://martllm.com/models/fal-ai/minimax/hailuo-02/standard/image-to-video) | video | $0.017 / sec | $0.01619 / sec | −5% |
+| [Veo 3.1 Lite Text to Video](https://martllm.com/models/fal-ai/veo3.1/lite) | video | $0.03 / sec | $0.02857 / sec | −5% |
+| [Vidu Q3 Turbo Image to Video](https://martllm.com/models/fal-ai/vidu/q3/image-to-video/turbo) | video | $0.035 / sec | $0.03333 / sec | −5% |
+| [Vidu Q3 Turbo Text to Video](https://martllm.com/models/fal-ai/vidu/q3/text-to-video/turbo) | video | $0.035 / sec | $0.03333 / sec | −5% |
+| [LTX 2.3 Text to Video](https://martllm.com/models/fal-ai/ltx-2.3/text-to-video) | video | $0.08 / sec | $0.07619 / sec | −5% |
+| [Hailuo 02 Standard Text to Video](https://martllm.com/models/fal-ai/minimax/hailuo-02/standard/text-to-video) | video | $0.045 / sec | $0.04286 / sec | −5% |
+| [Veo 3.1 Text to Video](https://martllm.com/models/fal-ai/veo3.1) | video | $0.20 / sec | $0.1905 / sec | −5% |
+| [Veo 3.1 Fast Text to Video](https://martllm.com/models/fal-ai/veo3.1/fast) | video | $0.10 / sec | $0.09524 / sec | −5% |
+| [Veo 3.1 Fast Image to Video](https://martllm.com/models/fal-ai/veo3.1/fast/image-to-video) | video | $0.10 / sec | $0.09524 / sec | −5% |
+| [Veo 3.1 Image to Video](https://martllm.com/models/fal-ai/veo3.1/image-to-video) | video | $0.20 / sec | $0.1905 / sec | −5% |
+| [Wan 2.7 Image to Video](https://martllm.com/models/fal-ai/wan/v2.7/image-to-video) | video | $0.10 / sec | $0.09524 / sec | −5% |
+| [Wan 2.7 Text to Video](https://martllm.com/models/fal-ai/wan/v2.7/text-to-video) | video | $0.10 / sec | $0.09524 / sec | −5% |
+| [Kling O3 Standard Image to Video](https://martllm.com/models/fal-ai/kling-video/o3/standard/image-to-video) | video | $0.084 / sec | $0.08 / sec | −5% |
+| [Kling O3 Standard Text to Video](https://martllm.com/models/fal-ai/kling-video/o3/standard/text-to-video) | video | $0.084 / sec | $0.08 / sec | −5% |
+| [Kling 3 Standard Image to Video](https://martllm.com/models/fal-ai/kling-video/v3/standard/image-to-video) | video | $0.084 / sec | $0.08 / sec | −5% |
+| [Kling 3 Standard Text to Video](https://martllm.com/models/fal-ai/kling-video/v3/standard/text-to-video) | video | $0.084 / sec | $0.08 / sec | −5% |
+| [LTX 2.3 Fast Image to Video](https://martllm.com/models/fal-ai/ltx-2.3/image-to-video/fast) | video | $0.06 / sec | $0.05714 / sec | −5% |
+| [LTX 2.3 Fast Text to Video](https://martllm.com/models/fal-ai/ltx-2.3/text-to-video/fast) | video | $0.06 / sec | $0.05714 / sec | −5% |
+| [Kling 3 Pro Image to Video](https://martllm.com/models/fal-ai/kling-video/v3/pro/image-to-video) | video | $0.112 / sec | $0.1067 / sec | −5% |
+| [Kling 3 Pro Text to Video](https://martllm.com/models/fal-ai/kling-video/v3/pro/text-to-video) | video | $0.112 / sec | $0.1067 / sec | −5% |
+| [Kling 2.6 Pro Image to Video](https://martllm.com/models/fal-ai/kling-video/v2.6/pro/image-to-video) | video | $0.07 / sec | $0.06667 / sec | −5% |
+| [Kling 2.6 Pro Text to Video](https://martllm.com/models/fal-ai/kling-video/v2.6/pro/text-to-video) | video | $0.07 / sec | $0.06667 / sec | −5% |
+| [Vidu Q3 Image to Video](https://martllm.com/models/fal-ai/vidu/q3/image-to-video) | video | $0.07 / sec | $0.06667 / sec | −5% |
+| [Vidu Q3 Text to Video](https://martllm.com/models/fal-ai/vidu/q3/text-to-video) | video | $0.07 / sec | $0.06667 / sec | −5% |
+| [Qwen 3 235B A22B Instruct 2507](https://martllm.com/models/qwen/qwen3-235b-a22b-2507) | text | $0.14 / $0.75 | $0.135 / $0.75 | in −4% / out 0% |
+| [Llama 3.2 3B](https://martllm.com/models/meta-llama/llama-3.2-3b-instruct) | text | $0.0509 / $0.335 | $0.05 / $0.33 | in −2% / out −1% |
+| [Kling V3 Standard Text-to-Video](https://martllm.com/models/kling/kling-v3-standard-text-to-video) | video | $0.14 / sec | $0.138 / sec | −1% |
+| [DeepSeek V4 Pro 0813](https://martllm.com/models/deepseek/deepseek-v4-pro-0813) | text | $1.32 / $3.96 | $1.31 / $3.96 | in −1% / out 0% |
+| [PixVerse C1 Text-to-Video (Venice)](https://martllm.com/models/venice/pixverse-c1-t2v) | video | $0.072 / sec | $0.0715 / sec | −1% |
+| [Seedance 2.0 Fast Text-to-Video (Venice)](https://martllm.com/models/venice/seedance-2-fast-t2v) | video | $0.1513 / sec | $0.1513 / sec | 0% |
+| [Flux 3 (image-to-image)](https://martllm.com/models/black-forest-labs/flux-3-image-edit) | image | – | $0.12 / image |  |
+| [Flux 3 (Venice)](https://martllm.com/models/black-forest-labs/venice-flux-3-image) | image | – | $0.12 / image |  |
+| [Seedance 2.5](https://martllm.com/models/bytedance/seedance-2-5) | video | – | $0.14 / sec |  |
+| [Seedance 2.5 Image-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-image-to-video-basic) | video | – | $0.1287 / sec |  |
+| [Seedance 2.5 Reference-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-reference-to-video-basic) | video | – | $0.1287 / sec |  |
+| [Seedance 2.5 Text-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-text-to-video-basic) | video | – | $0.1287 / sec |  |
+| [Seedream V5.5 (Venice)](https://martllm.com/models/bytedance/venice-seedream-v5-5) | image | – | $0.0255 / image |  |
+| [Seedream V5.5 (image-to-image)](https://martllm.com/models/bytedance/venice-seedream-v5-5-edit) | image | – | $0.0255 / image |  |
+| [ElevenLabs Music v2.5](https://martllm.com/models/elevenlabs/elevenlabs-music-v2-5) | music | – | $0.69 / track |  |
+| [ElevenLabs TTS v4](https://martllm.com/models/elevenlabs/elevenlabs-tts-v4) | music | – | $0.092 / 1K chars |  |
+| [ElevenLabs TTS v4 Turbo](https://martllm.com/models/elevenlabs/elevenlabs-tts-v4-turbo) | music | – | $0.046 / 1K chars |  |
+| [Lyria 3 Pro](https://martllm.com/models/google-deepmind/lyria-3-pro) | music | – | $0.10 / track |  |
+| [Gemini Omni Flash](https://martllm.com/models/google/gemini-omni-flash) | video | – | $0.07875 / sec |  |
+| [Gemini Omni Flash 1.1](https://martllm.com/models/google/gemini-omni-flash-1-1) | video | – | $0.07875 / sec |  |
+| [Ideogram V4 (Venice)](https://martllm.com/models/ideogram/venice-ideogram-v4) | image | – | $0.06 / image |  |
+| [Ideogram V4.5 (Venice)](https://martllm.com/models/ideogram/venice-ideogram-v4-5) | image | – | $0.26 / image |  |
+| [Krea 2 Turbo (Venice)](https://martllm.com/models/krea/venice-krea-2-turbo) | image | – | $0.04 / image |  |
+| [Krea v2 Large (Venice)](https://martllm.com/models/krea/venice-krea-v2-large) | image | – | $0.07 / image |  |
+| [Krea v2 Medium (Venice)](https://martllm.com/models/krea/venice-krea-v2-medium) | image | – | $0.04 / image |  |
+| [Luma Uni-1 (Venice)](https://martllm.com/models/luma/venice-luma-uni-1) | image | – | $0.05 / image |  |
+| [Luma Uni-1 Max (Venice)](https://martllm.com/models/luma/venice-luma-uni-1-max) | image | – | $0.12 / image |  |
+| [Llama 3.3 70B Instruct](https://martllm.com/models/meta-llama/llama-3.3-70b-instruct) | text | – / – | $0.293 / $0.71 |  |
+| [Muse Image (image-to-image)](https://martllm.com/models/meta-llama/muse-image-edit) | image | – | $0.02 / image |  |
+| [MoonshotAI: Kimi K3.1 Pro](https://martllm.com/models/moonshotai/kimi-k3.1-pro) | text | – / – | $2.00 / $10.00 |  |
+| [GPT Image 2.6 Flare (Venice)](https://martllm.com/models/openai/venice-gpt-image-2-6-flare) | image | – | $0.09 / image |  |
+| [GPT Image 2.6 Flare (image-to-image)](https://martllm.com/models/openai/venice-gpt-image-2-6-flare-edit) | image | – | $0.10 / image |  |
+| [GPT Image 2.6 Sunburst (Venice)](https://martllm.com/models/openai/venice-gpt-image-2-6-sunburst) | image | – | $0.09 / image |  |
+| [Qwen 3.8 27B](https://martllm.com/models/qwen/qwen-3-8-27b) | text | – / – | $0.20 / $2.30 |  |
+| [Qwen 3.5 9B](https://martllm.com/models/qwen/qwen3.5-9b) | text | – / – | $0.17 / $0.25 |  |
+| [Qwen Image 2.1 Pro (Venice)](https://martllm.com/models/qwen/venice-qwen-image-2-1-pro) | image | – | $0.05 / image |  |
+| [Qwen Image 2.1 Turbo (Venice)](https://martllm.com/models/qwen/venice-qwen-image-2-1-turbo) | image | – | $0.02 / image |  |
+| [Wan 3.0 Image-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-image-to-video) | video | – | $0.26 / sec |  |
+| [Wan 3.0 Prime Image-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-prime-image-to-video) | video | – | $0.364 / sec |  |
+| [Wan 3.0 Prime Reference-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-prime-reference-to-video) | video | – | $0.364 / sec |  |
+| [Wan 3.0 Prime Text-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-prime-text-to-video) | video | – | $0.364 / sec |  |
+| [Wan 3.0 Reference-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-reference-to-video) | video | – | $0.26 / sec |  |
+| [Wan 3.0 Text-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-text-to-video) | video | – | $0.26 / sec |  |
+| [Sonilo V1.1 Music](https://martllm.com/models/sonilo/sonilo-music-v1-1) | music | – | $0.002875 / sec |  |
+| [Sonilo V1.1 Sound Effects](https://martllm.com/models/sonilo/sonilo-sound-effects-v1-0) | music | – | $0.00207 / sec |  |
+| [Qwen 3.6 27B](https://martllm.com/models/qwen/qwen3.6-27b) | text | $0.32 / $3.20 | $0.3225 / $3.20 | in +1% / out 0% |
+| [Grok Imagine Text-to-Video](https://martllm.com/models/x-ai/grok-imagine-text-to-video) | video | $0.08917 / sec | $0.09 / sec | +1% |
+| [Tencent HY3](https://martllm.com/models/tencent/hy3) | text | $0.132 / $0.528 | $0.136 / $0.554 | in +3% / out +5% |
+| [Ministral 14B 3.0](https://martllm.com/models/mistralai/ministral-3-14b-instruct) | text | $0.20 / $0.20 | $0.21 / $0.21 | +5% |
+| [Ministral 3B](https://martllm.com/models/mistralai/ministral-3-3b-instruct) | text | $0.10 / $0.10 | $0.105 / $0.105 | +5% |
+| [Ministral 3 8B](https://martllm.com/models/mistralai/ministral-3-8b-instruct) | text | $0.15 / $0.15 | $0.1575 / $0.1575 | +5% |
+| [Mistral Large 3](https://martllm.com/models/mistralai/mistral-large-3) | text | $0.50 / $1.50 | $0.525 / $1.57 | +5% |
+| [Mistral: Mistral Large 4](https://martllm.com/models/mistralai/mistral-large-4-0) | text | $0.70 / $2.10 | $0.735 / $2.21 | +5% |
+| [NVIDIA Nemotron 3 Super 120B](https://martllm.com/models/nvidia/nemotron-3-super-120b) | text | $0.075 / $0.40 | $0.0775 / $0.425 | in +3% / out +6% |
+| [Kimi K2.7 Code](https://martllm.com/models/moonshotai/kimi-k2.7-code) | text | $0.70 / $3.50 | $0.75 / $3.50 | in +7% / out 0% |
+| [Kimi K2.6](https://martllm.com/models/moonshotai/kimi-k2.6) | text | $0.65 / $3.41 | $0.70 / $3.40 | in +8% / out 0% |
+| [GLM 4.5 Air](https://martllm.com/models/z-ai/glm-4.5-air) | text | $0.13 / $0.85 | $0.14 / $0.86 | in +8% / out +1% |
+| [GLM 4.7 Flash](https://martllm.com/models/z-ai/glm-4.7-flash) | text | $0.0605 / $0.40 | $0.0653 / $0.40 | in +8% / out 0% |
+| [DeepSeek V3.1](https://martllm.com/models/deepseek/deepseek-v3.1) | text | $0.25 / $0.95 | $0.27 / $1.00 | in +8% / out +5% |
+| [Mistral Small 4](https://martllm.com/models/mistralai/mistral-small-4) | text | $0.15 / $0.60 | $0.165 / $0.66 | +10% |
+| [Grok 4.5](https://martllm.com/models/x-ai/grok-4.5) | text | $2.00 / $6.00 | $2.27 / $6.80 | in +14% / out +13% |
+| [Grok 4.6](https://martllm.com/models/x-ai/grok-4.6) | text | $2.00 / $6.00 | $2.27 / $6.80 | in +14% / out +13% |
+| [Grok 4.20 Beta](https://martllm.com/models/x-ai/grok-4.20-beta) | text | $1.25 / $2.50 | $1.42 / $2.83 | in +14% / out +13% |
+| [Grok 4.20 Multi-Agent Beta](https://martllm.com/models/x-ai/grok-4.20-multi-agent-beta) | text | $1.25 / $2.50 | $1.42 / $2.83 | in +14% / out +13% |
+| [Grok 4.3](https://martllm.com/models/x-ai/grok-4.3) | text | $1.25 / $2.50 | $1.42 / $2.83 | in +14% / out +13% |
+| [Kimi K2.5](https://martllm.com/models/moonshotai/kimi-k2.5) | text | $0.50 / $2.50 | $0.57 / $2.85 | +14% |
+| [Qwen 3.5 397B](https://martllm.com/models/qwen/qwen3.5-397b-a17b) | text | $0.45 / $3.00 | $0.55 / $3.60 | in +22% / out +20% |
+| [Gemma 3 12B IT](https://martllm.com/models/google/gemma-3-12b-it) | text | $0.05 / $0.15 | $0.0625 / $0.1875 | +25% |
+| [Mistral Small 3.2 24B Instruct](https://martllm.com/models/mistralai/mistral-small-3.2-24b-instruct) | text | $0.075 / $0.20 | $0.09 / $0.25 | in +20% / out +25% |
+| [Qwen 3 Coder 480b](https://martllm.com/models/qwen/qwen3-coder) | text | $0.30 / $1.00 | $0.325 / $1.25 | in +8% / out +25% |
+| [GLM-4.7](https://martllm.com/models/z-ai/glm-4.7) | text | $0.40 / $1.75 | $0.5002 / $2.06 | in +25% / out +18% |
+| [DeepSeek V3.2](https://martllm.com/models/deepseek/deepseek-v3.2) | text | $0.26 / $0.38 | $0.27 / $0.48 | in +4% / out +26% |
+| [Gemma 4 26B A4B IT](https://martllm.com/models/google/gemma-4-26b-a4b-it) | text | $0.0765 / $0.255 | $0.10 / $0.30 | in +31% / out +18% |
+| [inclusionAI: Ling 3.1 Flash](https://martllm.com/models/inclusionai/ling-3.1-flash) | text | $0.045 / $0.135 | $0.06 / $0.18 | +33% |
+| [Reflection: Beam 1.0 501B A23B](https://martllm.com/models/reflection/beam-1.0-501b-a23b) | text | $0.30 / $1.00 | $0.40 / $1.20 | in +33% / out +20% |
+| [Qwen3 32B](https://martllm.com/models/qwen/qwen3-32b) | text | $0.08 / $0.28 | $0.12 / $0.40 | in +50% / out +43% |
+| [DeepSeek V4 Flash](https://martllm.com/models/deepseek/deepseek-v4-flash) | text | $0.09 / $0.18 | $0.12 / $0.27 | in +33% / out +50% |
+| [GPT-OSS 20B](https://martllm.com/models/openai/gpt-oss-20b) | text | $0.018 / $0.09 | $0.03 / $0.15 | +67% |
+| [MiniMax M2.7](https://martllm.com/models/minimax/minimax-m2.7) | text | $0.21 / $0.84 | $0.375 / $1.32 | in +79% / out +57% |
+| [MiniMax M3.1 Flash](https://martllm.com/models/minimax/minimax-m3-1-flash) | text | $0.075 / $0.30 | $0.15 / $0.60 | +100% |
+| [Tencent: Hy4](https://martllm.com/models/tencent/hy4) | text | $0.417 / $1.25 | $0.834 / $2.50 | +100% |
+| [MiMo-V2.5-Pro](https://martllm.com/models/xiaomi/mimo-v2.5-pro) | text | $0.435 / $0.87 | $0.48 / $1.80 | in +10% / out +107% |
+| [DeepSeek V4 Flash 0731](https://martllm.com/models/deepseek/deepseek-v4-flash-0731) | text | $0.06 / $0.18 | $0.13 / $0.26 | in +117% / out +44% |
+| [GLM 5.3 Flash](https://martllm.com/models/z-ai/glm-5.3-flash) | text | $0.0399 / $0.0784 | $0.13 / $0.50 | in +226% / out +538% |
+| [Nano Banana (Gemini 2.5 Flash Image)](https://martllm.com/models/google/gemini-2.5-flash-image) | image | $0.30 / $2.50 | $0.30 / $30.00 | in 0% / out +1100% |
+
+**New models (34)**
+
+| Model | Category | Official price | MartLLM price |
+|---|---|---|---|
+| [Seedance 2.5 Flash Image-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-flash-image-to-video-basic) | video | $0.189 / sec | $0.08828 / sec |
+| [Seedance 2.5 Flash Reference-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-flash-reference-to-video-basic) | video | $0.189 / sec | $0.08828 / sec |
+| [Seedance 2.5 Flash Text-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-flash-text-to-video-basic) | video | $0.189 / sec | $0.08828 / sec |
+| [Google: Gemini 4 Neon](https://martllm.com/models/google/gemini-4-neon) | text | $3.00 / $15.00 | $2.30 / $11.50 |
+| [Gemini Omni Flash 1.1 Image-to-Video](https://martllm.com/models/google/venice-gemini-omni-flash-1-1-image-to-video) | video | $0.1167 / sec | $0.04095 / sec |
+| [Gemini Omni Flash 1.1 Reference-to-Video](https://martllm.com/models/google/venice-gemini-omni-flash-1-1-reference-to-video) | video | $0.1167 / sec | $0.04095 / sec |
+| [Gemini Omni Flash 1.1 Text-to-Video](https://martllm.com/models/google/venice-gemini-omni-flash-1-1-text-to-video) | video | $0.1167 / sec | $0.04095 / sec |
+| [Kling 4.0 Flash Image-to-Video](https://martllm.com/models/kling/venice-kling-v4-flash-image-to-video) | video | – | $0.1234 / sec |
+| [Kling 4.0 Flash Reference-to-Video](https://martllm.com/models/kling/venice-kling-v4-flash-reference-to-video) | video | – | $0.1234 / sec |
+| [Kling 4.0 Flash Text-to-Video](https://martllm.com/models/kling/venice-kling-v4-flash-text-to-video) | video | – | $0.1234 / sec |
+| [Kling Image 4.0 (image-to-image)](https://martllm.com/models/kling/venice-kling-v4-image-edit) | image | $0.08 / image | $0.07896 / image |
+| [Kling 4.0 Image-to-Video](https://martllm.com/models/kling/venice-kling-v4-image-to-video) | video | $0.2938 / sec | $0.2061 / sec |
+| [Kling 4.0 Reference-to-Video](https://martllm.com/models/kling/venice-kling-v4-reference-to-video) | video | $0.2937 / sec | $0.2061 / sec |
+| [Kling Image 4.0](https://martllm.com/models/kling/venice-kling-v4-text-to-image) | image | $0.08 / image | $0.0672 / image |
+| [Kling 4.0 Text-to-Video](https://martllm.com/models/kling/venice-kling-v4-text-to-video) | video | $0.2938 / sec | $0.1649 / sec |
+| [Muse Image](https://martllm.com/models/meta-llama/venice-muse-image) | image | $0.02 / image | $0.0168 / image |
+| [MiniMax H3 Chili Image-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-chili-image-to-video) | video | – | $0.1365 / sec |
+| [MiniMax H3 Chili Text-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-chili-text-to-video) | video | – | $0.0315 / sec |
+| [MiniMax H3 Enhanced Text-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-enhanced-text-to-video) | video | $0.1626 / sec | $0.105 / sec |
+| [MiniMax H3 Hyper Image-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-hyper-image-to-video) | video | $0.035 / sec | $0.02756 / sec |
+| [MiniMax H3 Hyper Text-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-hyper-text-to-video) | video | – | $0.02625 / sec |
+| [MiniMax H3 Image](https://martllm.com/models/minimax/venice-minimax-h3-image) | image | $0.04 / image | $0.0336 / image |
+| [MiniMax H3 Image (image-to-image)](https://martllm.com/models/minimax/venice-minimax-h3-image-edit) | image | $0.06 / image | $0.05922 / image |
+| [MiniMax H3 Image-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-image-to-video) | video | $0.1626 / sec | $0.105 / sec |
+| [MiniMax H3 Max Image-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-max-image-to-video) | video | $0.072 / sec | $0.04725 / sec |
+| [MiniMax H3 Max Text-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-max-text-to-video) | video | $0.072 / sec | $0.04725 / sec |
+| [MiniMax H3 Text-to-Video](https://martllm.com/models/minimax/venice-minimax-h3-text-to-video) | video | $0.1626 / sec | $0.084 / sec |
+| [Mistral: Pixtral Large 2502](https://martllm.com/models/mistralai/pixtral-large-2502) | text | $2.00 / $6.00 | $1.49 / $4.47 |
+| [Voxtral Small 24B 2507](https://martllm.com/models/mistralai/voxtral-small-24b-2507) | text | $0.105 / $0.315 | $0.07387 / $0.2216 |
+| [GPT-6.2 Astra](https://martllm.com/models/openai/gpt-6.2-astra) | text | $8.00 / $40.00 | $4.96 / $24.78 |
+| [GPT-6.2 Astra Pro](https://martllm.com/models/openai/gpt-6.2-astra-pro) | text | $8.00 / $40.00 | $6.97 / $34.86 |
+| [GPT-6.2 Sol](https://martllm.com/models/openai/gpt-6.2-sol) | text | $2.00 / $10.00 | $1.13 / $5.67 |
+| [GPT-6.2 Sol Pro](https://martllm.com/models/openai/gpt-6.2-sol-pro) | text | $2.00 / $10.00 | $2.02 / $10.08 |
+| [Grok Imagine 1.5 Lite Text-to-Video](https://martllm.com/models/x-ai/venice-grok-imagine-1-5-lite-text-to-video) | video | $0.036 / sec | $0.0252 / sec |
+
+**No longer listed (14)**: `anthropic/claude-haiku-5.5:batch`, `anthropic/claude-opus-4.6-fast`, `anthropic/claude-opus-4.7-fast`, `anthropic/claude-opus-4.8-fast`, `bytedance/seed-2.0-code`, `google/e2ee-gemma-4-31b`, `google/gemini-2.5-flash`, `google/gemini-2.5-pro`, `google/gemini-3.1-pro`, `minimax/minimax-m2.7-highspeed`, `openai/gpt-6.1-terra-pro:batch`, `openai/gpt-6.1-terra:batch`, `qwen/e2ee-qwen3-5-122b-a10b`, `z-ai/e2ee-glm-4.7-flash`
+
+<details><summary>MartLLM price moves of 10% or more (347)</summary>
+
+| Model | Category | Before | After | Change |
+|---|---|---|---|---|
+| [MiniMax M2.1](https://martllm.com/models/minimax/minimax-m2.1) | text | $0.315 / $1.26 | $0.003045 / $0.009975 | −99% |
+| [NVIDIA Nemotron Nano 12B v2 VL BF16](https://martllm.com/models/nvidia/nemotron-nano-12b-v2) | text | $0.054 / $0.162 | $0.0042 / $0.0126 | −92% |
+| [GPT Image 2.6 Flare (image-to-image)](https://martllm.com/models/openai/venice-gpt-image-2-6-flare-edit) | image | $0.10 / image | $0.008075 / image | −92% |
+| [GPT Image 2.6 Flare (Venice)](https://martllm.com/models/openai/venice-gpt-image-2-6-flare) | image | $0.09 / image | $0.008075 / image | −91% |
+| [Z.ai: GLM 5.3 Prime](https://martllm.com/models/z-ai/glm-5.3-prime) | text | $0.4704 / $1.48 | $0.07056 / $0.2218 | −85% |
+| [Veo 3.1 Fast Text-to-Video](https://martllm.com/models/google/veo3-1-fast-text-to-video) | video | $0.099 / sec | $0.0175 / sec | −82% |
+| [Qwen: Qwen3.8 Max (0902)](https://martllm.com/models/qwen/qwen3.8-max-0902) | text | $0.74 / $2.22 | $0.147 / $0.441 | −80% |
+| [Wan 3.0 Image-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-image-to-video) | video | $0.26 / sec | $0.05323 / sec | −80% |
+| [Gemini Omni Flash](https://martllm.com/models/google/gemini-omni-flash) | video | $0.07875 / sec | $0.01769 / sec | −78% |
+| [Gemini Omni Flash 1.1](https://martllm.com/models/google/gemini-omni-flash-1-1) | video | $0.07875 / sec | $0.01769 / sec | −78% |
+| [Gemma 4 E2B](https://martllm.com/models/google/gemma-4-e2b) | text | $0.0112 / $0.0224 | $0.00252 / $0.00504 | −78% |
+| [Wan 3.0 Prime Image-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-prime-image-to-video) | video | $0.364 / sec | $0.09282 / sec | −74% |
+| [Wan 3.0 Prime Reference-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-prime-reference-to-video) | video | $0.364 / sec | $0.09282 / sec | −74% |
+| [Wan 3.0 Prime Text-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-prime-text-to-video) | video | $0.364 / sec | $0.09282 / sec | −74% |
+| [Devstral 2 123B](https://martllm.com/models/mistralai/devstral-2-123b) | text | $0.048 / $0.24 | $0.0126 / $0.063 | −74% |
+| [Wan 3.0 Reference-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-reference-to-video) | video | $0.26 / sec | $0.06825 / sec | −74% |
+| [Wan 3.0 Text-to-Video](https://martllm.com/models/qwen/venice-wan-3-0-text-to-video) | video | $0.26 / sec | $0.06825 / sec | −74% |
+| [Kimi K2 Thinking](https://martllm.com/models/moonshotai/kimi-k2-thinking) | text | $0.15 / $0.625 | $0.0441 / $0.1837 | −71% |
+| [Nano Banana Pro (image-to-image)](https://martllm.com/models/google/nano-banana-pro-edit) | image | $0.063 / image | $0.019 / image | −70% |
+| [Nano Banana Pro (Venice)](https://martllm.com/models/venice/nano-banana-pro) | image | $0.063 / image | $0.019 / image | −70% |
+| [Voxtral Mini 3B 2507](https://martllm.com/models/mistralai/voxtral-mini-3b-2507) | text | $0.04 / $0.04 | $0.0126 / $0.0126 | −68% |
+| [Qwen: Qwen3.8 Omni Flash](https://martllm.com/models/qwen/qwen3.8-omni-flash) | text | $0.024 / $0.0752 | $0.007875 / $0.02467 | −67% |
+| [Seedance 2.5](https://martllm.com/models/bytedance/seedance-2-5) | video | $0.14 / sec | $0.04888 / sec | −65% |
+| [Seedance 2.5 Reference-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-reference-to-video-basic) | video | $0.14 / sec | $0.04888 / sec | −65% |
+| [Seedance 2.5 Text-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-text-to-video-basic) | video | $0.14 / sec | $0.04888 / sec | −65% |
+| [Qwen 4 Max](https://martllm.com/models/qwen/qwen4-max) | text | $0.969 / $2.91 | $0.3441 / $1.03 | −64% |
+| [NVIDIA Nemotron Nano 9B v2](https://martllm.com/models/nvidia/nemotron-nano-9b-v2) | text | $0.0048 / $0.0184 | $0.00189 / $0.007245 | −61% |
+| [MiniMax H3](https://martllm.com/models/minimax/minimax-h3) | video | $0.04 / sec | $0.01592 / sec | −60% |
+| [MiniMax H3 Reference](https://martllm.com/models/minimax/minimax-h3-reference-to-video) | video | $0.04 / sec | $0.01592 / sec | −60% |
+| [Mistral Large](https://martllm.com/models/mistralai/mistral-large) | text | $0.40 / $1.20 | $0.168 / $0.504 | −58% |
+| [GPT-5.2 Codex](https://martllm.com/models/openai/gpt-5.2-codex) | text | $1.75 / $14.00 | $0.8636 / $6.91 | −51% |
+| [Kimi K2.5](https://martllm.com/models/moonshotai/kimi-k2.5) | text | $0.275 / $1.38 | $0.1377 / $0.6883 | −50% |
+| [GLM 4.7 Flash](https://martllm.com/models/z-ai/glm-4.7-flash) | text | $0.01755 / $0.116 | $0.009599 / $0.0588 | in −45% / out −49% |
+| [GPT-4o Mini](https://martllm.com/models/openai/gpt-4o-mini) | text | $0.099 / $0.396 | $0.0504 / $0.2016 | −49% |
+| [GPT-5 Image](https://martllm.com/models/openai/gpt-5-image) | image | $9.30 / $9.30 | $4.83 / $4.83 | −48% |
+| [GPT-OSS 120B](https://martllm.com/models/openai/gpt-oss-120b) | text | $0.0028 / $0.012 | $0.00147 / $0.0063 | −48% |
+| [Magistral Small 2509](https://martllm.com/models/mistralai/magistral-small-2509) | text | $0.105 / $0.315 | $0.05775 / $0.1732 | −45% |
+| [Gemma 3 4B IT](https://martllm.com/models/google/gemma-3-4b-it) | text | $0.017 / $0.034 | $0.00945 / $0.0189 | −44% |
+| [GPT 5 Nano](https://martllm.com/models/openai/gpt-5-nano) | text | $0.0295 / $0.236 | $0.0168 / $0.1344 | −43% |
+| [Gemma 4 31B](https://martllm.com/models/google/gemma-4-31b) | text | $0.0264 / $0.0792 | $0.01638 / $0.04914 | −38% |
+| [Seedance 2.5 Image-to-Video](https://martllm.com/models/bytedance/venice-seedance-2-5-image-to-video-basic) | video | $0.14 / sec | $0.08803 / sec | −37% |
+| [Seedance 2.0 Text-to-Video](https://martllm.com/models/bytedance/seedance-2-0-text-to-video) | video | $0.095 / sec | $0.0598 / sec | −37% |
+| [GPT 5 Mini](https://martllm.com/models/openai/gpt-5-mini) | text | $0.0975 / $0.78 | $0.063 / $0.504 | −35% |
+| [Qwen3 32B](https://martllm.com/models/qwen/qwen3-32b) | text | $0.02 / $0.07 | $0.01386 / $0.0462 | in −31% / out −34% |
+| [Gemini 3.5 Flash Lite](https://martllm.com/models/google/gemini-3-5-flash-lite) | text | $0.162 / $1.35 | $0.1071 / $0.8925 | −34% |
+| [Seedance 2.0 Fast Text-to-Video (Venice)](https://martllm.com/models/venice/seedance-2-fast-t2v) | video | $0.059 / sec | $0.03984 / sec | −32% |
+| [Grok 4.3](https://martllm.com/models/x-ai/grok-4.3) | text | $0.5875 / $1.18 | $0.4026 / $0.8023 | in −31% / out −32% |
+| [MiniMax M2.5](https://martllm.com/models/minimax/minimax-m2.5) | text | $0.0486 / $0.171 | $0.03402 / $0.1197 | −30% |
+| [Qwen3 Coder Next](https://martllm.com/models/qwen/qwen3-coder-next) | text | $0.0252 / $0.168 | $0.01764 / $0.1176 | −30% |
+| [Qwen 3 Coder 480b](https://martllm.com/models/qwen/qwen3-coder) | text | $0.063 / $0.21 | $0.04436 / $0.1706 | in −30% / out −19% |
+| [Qwen 3.6 27B](https://martllm.com/models/qwen/qwen3.6-27b) | text | $0.1184 / $1.18 | $0.08466 / $0.84 | −29% |
+| [Luma Uni-1 (Venice)](https://martllm.com/models/luma/venice-luma-uni-1) | image | $0.05 / image | $0.03675 / image | −27% |
+| [Qwen Image 2.1 Pro (Venice)](https://martllm.com/models/qwen/venice-qwen-image-2-1-pro) | image | $0.05 / image | $0.03675 / image | −27% |
+| [Flux 3 (image-to-image)](https://martllm.com/models/black-forest-labs/flux-3-image-edit) | image | $0.12 / image | $0.0882 / image | −26% |
+| [Flux 3 (Venice)](https://martllm.com/models/black-forest-labs/venice-flux-3-image) | image | $0.12 / image | $0.0882 / image | −26% |
+| [Ideogram V4 (Venice)](https://martllm.com/models/ideogram/venice-ideogram-v4) | image | $0.06 / image | $0.0441 / image | −26% |
+| [Ideogram V4.5 (Venice)](https://martllm.com/models/ideogram/venice-ideogram-v4-5) | image | $0.26 / image | $0.1911 / image | −26% |
+| [Krea 2 Turbo (Venice)](https://martllm.com/models/krea/venice-krea-2-turbo) | image | $0.04 / image | $0.0294 / image | −26% |
+| [Krea v2 Large (Venice)](https://martllm.com/models/krea/venice-krea-v2-large) | image | $0.07 / image | $0.05145 / image | −26% |
+| [Krea v2 Medium (Venice)](https://martllm.com/models/krea/venice-krea-v2-medium) | image | $0.04 / image | $0.0294 / image | −26% |
+| [Luma Uni-1 Max (Venice)](https://martllm.com/models/luma/venice-luma-uni-1-max) | image | $0.12 / image | $0.0882 / image | −26% |
+| [GPT Image 2.6 Sunburst (Venice)](https://martllm.com/models/openai/venice-gpt-image-2-6-sunburst) | image | $0.09 / image | $0.06615 / image | −26% |
+| [Qwen Image 2.1 Turbo (Venice)](https://martllm.com/models/qwen/venice-qwen-image-2-1-turbo) | image | $0.02 / image | $0.0147 / image | −26% |
+| [Seedream V5.5 (Venice)](https://martllm.com/models/bytedance/venice-seedream-v5-5) | image | $0.0255 / image | $0.01874 / image | −26% |
+| [Tencent: Hy4 preview](https://martllm.com/models/tencent/hy4-preview) | text | $0.5588 / $1.68 | $0.4116 / $1.23 | −26% |
+| [GPT-6.1 Sol](https://martllm.com/models/openai/gpt-6.1-sol) | text | $1.10 / $5.50 | $0.819 / $4.09 | −26% |
+| [PixVerse C1 Text-to-Video (Venice)](https://martllm.com/models/venice/pixverse-c1-t2v) | video | $0.0432 / sec | $0.03234 / sec | −25% |
+| [Sonilo V1.1 Sound Effects](https://martllm.com/models/sonilo/sonilo-sound-effects-v1-0) | music | $0.00207 / sec | $0.001579 / sec | −24% |
+| [Sonilo V1.1 Music](https://martllm.com/models/sonilo/sonilo-music-v1-1) | music | $0.002875 / sec | $0.002194 / sec | −24% |
+| [Seedream 4.5](https://martllm.com/models/bytedance/seedream-4.5) | image | $0.0164 / image | $0.0126 / image | −23% |
+| [DeepSeek: DeepSeek V4 Flash Vision Exp](https://martllm.com/models/deepseek/deepseek-v4-flash-vision-exp) | text | $0.308 / $0.924 | $0.2377 / $0.7131 | −23% |
+| [Particle AI: Particle-1](https://martllm.com/models/particle-ai/particle-1) | text | $0.0432 / $0.36 | $0.03914 / $0.2796 | in −9% / out −22% |
+| [DeepSeek V3.1](https://martllm.com/models/deepseek/deepseek-v3.1) | text | $0.0775 / $0.2945 | $0.06237 / $0.231 | in −20% / out −22% |
+| [Meta: Muse Wonder](https://martllm.com/models/meta-llama/muse-wonder) | text | $2.76 / $13.80 | $2.18 / $10.92 | −21% |
+| [Meta: Muse Spark 1.3](https://martllm.com/models/meta-llama/muse-spark-1.3) | text | $0.8712 / $2.96 | $0.6956 / $2.37 | −20% |
+| [Mistral Large 3](https://martllm.com/models/mistralai/mistral-large-3) | text | $0.11 / $0.33 | $0.0882 / $0.2646 | −20% |
+| [GPT-6 Luna](https://martllm.com/models/openai/gpt-6-luna) | text | $0.073 / $0.365 | $0.0588 / $0.294 | −19% |
+| [GPT-6 Luna Decisions (OpenAI)](https://martllm.com/models/openai/gpt-6-luna-decisions) | other | $0.073 / $0 | $0.0588 / $0 | in −19% / out – |
+| [MiMo-V2.6-Flash](https://martllm.com/models/xiaomi/mimo-v2.6-flash) | text | $0.14 / $0.28 | $0.1132 / $0.2264 | −19% |
+| [Seedream V5 Pro (Venice)](https://martllm.com/models/bytedance/venice-seedream-v5-pro) | image | $0.035 / image | $0.02835 / image | −19% |
+| [GPT-6 Astra](https://martllm.com/models/openai/gpt-6-astra) | text | $4.40 / $22.00 | $3.57 / $17.85 | −19% |
+| [ElevenLabs TTS v4](https://martllm.com/models/elevenlabs/elevenlabs-tts-v4) | music | $0.092 / 1K chars | $0.07521 / 1K chars | −18% |
+| [GPT-5.3 Codex](https://martllm.com/models/openai/gpt-5.3-codex) | text | $1.07 / $8.54 | $0.882 / $7.06 | −17% |
+| [Qwen 3 235B A22B Instruct 2507](https://martllm.com/models/qwen/qwen3-235b-a22b-2507) | text | $0.0938 / $0.5025 | $0.07796 / $0.4331 | in −17% / out −14% |
+| [MiMo-V2.6-Pro](https://martllm.com/models/xiaomi/mimo-v2.6-pro) | text | $0.3001 / $0.6003 | $0.2512 / $0.5024 | −16% |
+| [Gemma 3 27B E2EE](https://martllm.com/models/google/e2ee-gemma-3-27b) | text | $0.07 / $0.25 | $0.0588 / $0.21 | −16% |
+| [Muse Image (image-to-image)](https://martllm.com/models/meta-llama/muse-image-edit) | image | $0.02 / image | $0.0168 / image | −16% |
+| [GPT OSS 20B](https://martllm.com/models/openai/e2ee-gpt-oss-20b-p) | text | $0.025 / $0.095 | $0.021 / $0.0798 | −16% |
+| [Mistral: Mistral Large 4](https://martllm.com/models/mistralai/mistral-large-4-0) | text | $0.357 / $1.07 | $0.301 / $0.9029 | −16% |
+| [GLM 5V Turbo](https://martllm.com/models/z-ai/glm-5v-turbo) | text | $1.08 / $3.60 | $0.9198 / $3.07 | −15% |
+| [GPT-6 Luna Pro](https://martllm.com/models/openai/gpt-6-luna-pro) | text | $0.10 / $0.50 | $0.0861 / $0.4305 | −14% |
+| [Lyria 3 Pro](https://martllm.com/models/google-deepmind/lyria-3-pro) | music | $0.10 / track | $0.0872 / track | −13% |
+| [ElevenLabs TTS v4 Turbo](https://martllm.com/models/elevenlabs/elevenlabs-tts-v4-turbo) | music | $0.046 / 1K chars | $0.04011 / 1K chars | −13% |
+| [GPT OSS Safeguard 20B](https://martllm.com/models/openai/gpt-oss-safeguard-20b) | text | $0.0015 / $0.006 | $0.001523 / $0.00525 | in +2% / out −12% |
+| [MiniMax M3 Preview](https://martllm.com/models/minimax/minimax-m3-preview) | text | $0.21 / $0.84 | $0.2331 / $0.9324 | +11% |
+| [Aion 3.0](https://martllm.com/models/aion-labs/aion-3-0) | text | $1.95 / $3.90 | $2.17 / $4.35 | +11% |
+| [Wan 2.7 Pro (image-to-image)](https://martllm.com/models/wan/wan-2-7-pro-edit) | image | $0.0564 / image | $0.063 / image | +12% |
+| [Kimi K2.6](https://martllm.com/models/moonshotai/kimi-k2.6) | text | $0.0325 / $0.1705 | $0.03675 / $0.1785 | in +13% / out +5% |
+| [Qwen Image 2 Pro (Venice)](https://martllm.com/models/venice/qwen-image-2-pro) | image | $0.06 / image | $0.06825 / image | +14% |
+| [Kimi K2](https://martllm.com/models/moonshotai/kimi-k2) | text | $0.399 / $1.61 | $0.4549 / $1.84 | +14% |
+| [Kimi K3 Fast](https://martllm.com/models/moonshotai/kimi-k3-fast-api) | text | $3.02 / $15.07 | $3.45 / $17.25 | +14% |
+| [MiniMax M3](https://martllm.com/models/minimax/minimax-m3) | text | $0.096 / $0.384 | $0.1103 / $0.441 | +15% |
+| [NVIDIA Nemotron 3.5 Lightning 30B](https://martllm.com/models/nvidia/nemotron-3-5-lightning-30b-a3b) | text | $0.064 / $0.1829 | $0.064 / $0.21 | in 0% / out +15% |
+| [Seedream V5 Lite (Venice)](https://martllm.com/models/venice/seedream-v5-lite) | image | $0.025 / image | $0.02888 / image | +16% |
+| [Qwen 3.5 35B A3B](https://martllm.com/models/qwen/qwen3.5-35b-a3b) | text | $0.102 / $0.68 | $0.1181 / $0.7875 | +16% |
+| [Claude Fable 5.1](https://martllm.com/models/anthropic/claude-fable-5.1) | text | $4.80 / $24.00 | $5.57 / $27.82 | +16% |
+| [Venice TTS 1 (legacy alias)](https://martllm.com/models/venice/tts-1) | speech | $0.002625 / 1K chars | $0.003052 / 1K chars | +16% |
+| [Seedance 1.5 Pro (image-to-video)](https://martllm.com/models/bytedance/seedance-1-5-pro-image-to-video) | video | $0.0306 / sec | $0.0357 / sec | +17% |
+| [GPT-5.6 Sol](https://martllm.com/models/openai/gpt-5.6-sol) | text | $1.40 / $7.00 | $1.64 / $8.19 | +17% |
+| [Aion 2.0](https://martllm.com/models/aion-labs/aion-2.0) | text | $0.488 / $0.976 | $0.5712 / $1.14 | +17% |
+| [Claude Fable 5](https://martllm.com/models/anthropic/claude-fable-5) | text | $5.20 / $26.00 | $6.09 / $30.45 | +17% |
+| [Grok 4.5](https://martllm.com/models/x-ai/grok-4.5) | text | $1.26 / $3.78 | $1.48 / $4.43 | +17% |
+| [Flux 2 Max (Venice)](https://martllm.com/models/venice/flux-2-max) | image | $0.0522 / image | $0.06143 / image | +18% |
+| [OpenAI: GPT-6.1 Sol Pro](https://martllm.com/models/openai/gpt-6.1-sol-pro) | text | $1.46 / $7.30 | $1.72 / $8.61 | +18% |
+| [Gemini 3.6 Flash](https://martllm.com/models/google/gemini-3-6-flash) | text | $0.4725 / $2.36 | $0.5591 / $2.80 | +18% |
+| [GLM-5 Turbo](https://martllm.com/models/z-ai/glm-5-turbo) | text | $0.696 / $2.32 | $0.8316 / $2.77 | +19% |
+| [GPT-6 Sol Pro](https://martllm.com/models/openai/gpt-6-sol-pro) | text | $1.44 / $7.20 | $1.72 / $8.61 | +20% |
+| [Claude Opus 4.7](https://martllm.com/models/anthropic/claude-opus-4.7) | text | $2.10 / $10.50 | $2.52 / $12.60 | +20% |
+| [Nano Banana 2 (image-to-image)](https://martllm.com/models/google/nano-banana-2-edit) | image | $0.035 / image | $0.042 / image | +20% |
+| [Nano Banana 2 (Venice)](https://martllm.com/models/venice/nano-banana-2) | image | $0.035 / image | $0.042 / image | +20% |
+| [Z.ai: GLM 5.3 FlashX Legal](https://martllm.com/models/z-ai/glm-5.3-flashx-legal) | text | $0.259 / $0.875 | $0.3108 / $1.05 | +20% |
+| [DeepSeek V4 Flash E2EE](https://martllm.com/models/deepseek/e2ee-deepseek-v4-flash) | text | $0.1329 / $0.2723 | $0.1605 / $0.329 | +21% |
+| [Claude Opus 5 (Fast)](https://martllm.com/models/anthropic/claude-opus-5-fast) | text | $7.20 / $36.00 | $8.71 / $43.58 | +21% |
+| [OpenAI: GPT-6.1 Terra Pro](https://martllm.com/models/openai/gpt-6.1-terra-pro) | text | $0.71 / $3.55 | $0.861 / $4.30 | +21% |
+| [Ministral 3B](https://martllm.com/models/mistralai/ministral-3-3b-instruct) | text | $0.02 / $0.02 | $0.02425 / $0.02425 | +21% |
+| [Ministral 3 8B](https://martllm.com/models/mistralai/ministral-3-8b-instruct) | text | $0.03 / $0.03 | $0.03638 / $0.03638 | +21% |
+| [NVIDIA Nemotron 3 Super 120B](https://martllm.com/models/nvidia/nemotron-3-super-120b) | text | $0.02 / $0.1125 | $0.02441 / $0.1339 | in +22% / out +19% |
+| [Wan 2.7 Pro (Venice)](https://martllm.com/models/venice/wan-2.7-pro) | image | $0.05156 / image | $0.063 / image | +22% |
+| [Firered Image (image-to-image)](https://martllm.com/models/xiaohongshu/firered-image-edit) | image | $0.024 / image | $0.0294 / image | +22% |
+| [Tencent: Hy4 flash](https://martllm.com/models/tencent/hy4-flash) | text | $0.02485 / $0.09975 | $0.0305 / $0.1224 | +23% |
+| [Grok 4.7](https://martllm.com/models/x-ai/grok-4.7) | text | $1.16 / $3.48 | $1.43 / $4.28 | +23% |
+| [Qwen3 Next 80B A3B](https://martllm.com/models/qwen/qwen3-next-80b-a3b-instruct) | text | $0.023 / $0.253 | $0.02693 / $0.3119 | in +17% / out +23% |
+| [Kling O3 Pro (image-to-video)](https://martllm.com/models/kling/kling-o3-pro-image-to-video) | video | $0.09 / sec | $0.1111 / sec | +23% |
+| [GPT OSS 120B](https://martllm.com/models/openai/e2ee-gpt-oss-120b-p) | text | $0.0884 / $0.442 | $0.1092 / $0.546 | +24% |
+| [Seedream V4.5 (Venice)](https://martllm.com/models/venice/seedream-v4) | image | $0.0275 / image | $0.03413 / image | +24% |
+| [Chatterbox HD TTS](https://martllm.com/models/resemble-ai/tts-chatterbox-hd) | speech | $0.035 / 1K chars | $0.0436 / 1K chars | +25% |
+| [Grok 4.6](https://martllm.com/models/x-ai/grok-4.6) | text | $1.24 / $3.72 | $1.55 / $4.64 | +25% |
+| [Seedance 2.0 (image-to-video)](https://martllm.com/models/bytedance/seedance-2-0-image-to-video) | video | $0.0528 / sec | $0.066 / sec | +25% |
+| [GPT-5.5](https://martllm.com/models/openai/gpt-5.5) | text | $2.55 / $15.30 | $3.20 / $19.21 | +26% |
+| [GLM 5.2 E2EE](https://martllm.com/models/z-ai/e2ee-glm-5-2-p) | text | $1.05 / $3.45 | $1.32 / $4.35 | +26% |
+| [Meta: Muse Spark 1.2](https://martllm.com/models/meta-llama/muse-spark-1.2) | text | $0.5375 / $1.83 | $0.6825 / $2.32 | +27% |
+| [DeepSeek V4 Flash 0731 Fast](https://martllm.com/models/deepseek/deepseek-v4-flash-0731-fast) | text | $0.2135 / $0.427 | $0.272 / $0.5439 | +27% |
+| [Qwen3.7 Max](https://martllm.com/models/qwen/qwen3.7-max) | text | $1.65 / $4.91 | $2.10 / $6.25 | +27% |
+| [Wan 2.7 Pro (image-to-video)](https://martllm.com/models/wan/wan-2-7-pro-image-to-video) | video | $0.084 / sec | $0.1071 / sec | +27% |
+| [Kling O3 Standard (image-to-video)](https://martllm.com/models/kling/kling-o3-standard-image-to-video) | video | $0.07 / sec | $0.08933 / sec | +28% |
+| [Claude Haiku 5.5](https://martllm.com/models/anthropic/claude-haiku-5.5) | text | $0.051 / $0.255 | $0.0651 / $0.3255 | +28% |
+| [Grok Imagine Pro (Venice)](https://martllm.com/models/venice/grok-imagine-pro) | image | $0.035 / image | $0.04483 / image | +28% |
+| [GPT-5.2](https://martllm.com/models/openai/gpt-5.2) | text | $0.77 / $6.16 | $1.01 / $8.09 | +31% |
+| [FLUX.2 Flex](https://martllm.com/models/black-forest-labs/flux.2-flex) | image | $0.0348 / megapixel | $0.04578 / megapixel | +32% |
+| [DeepSeek V4 Flash 0731](https://martllm.com/models/deepseek/deepseek-v4-flash-0731) | text | $0.0288 / $0.0864 | $0.03822 / $0.07644 | in +33% / out −12% |
+| [Aion 3.0 Mini](https://martllm.com/models/aion-labs/aion-3-0-mini) | text | $0.287 / $0.574 | $0.3896 / $0.7791 | +36% |
+| [Grok Build 0.1](https://martllm.com/models/x-ai/grok-build-0.1) | text | $0.77 / $1.54 | $1.05 / $2.10 | +36% |
+| [Qwen Image (Venice)](https://martllm.com/models/venice/qwen-image) | image | $0.015 / image | $0.02048 / image | +36% |
+| [Recraft V4 (Venice)](https://martllm.com/models/venice/recraft-v4) | image | $0.025 / image | $0.03413 / image | +36% |
+| [Qwen3 1.7B TTS](https://martllm.com/models/qwen/tts-qwen3-1-7b) | speech | $0.06187 / 1K chars | $0.08461 / 1K chars | +37% |
+| [GPT-5.4 Mini](https://martllm.com/models/openai/gpt-5.4-mini) | text | $0.0975 / $0.585 | $0.1339 / $0.8033 | +37% |
+| [Flux 1.1 (Venice, legacy)](https://martllm.com/models/venice/flux-1.1) | image | $0.006 / image | $0.0084 / image | +40% |
+| [Stable Diffusion XL (Venice, legacy)](https://martllm.com/models/venice/sdxl) | image | $0.006 / image | $0.0084 / image | +40% |
+| [GPT 5.4 Nano](https://martllm.com/models/openai/gpt-5.4-nano) | text | $0.036 / $0.225 | $0.0504 / $0.315 | +40% |
+| [Grok Imagine (Venice)](https://martllm.com/models/venice/grok-imagine) | image | $0.015 / image | $0.021 / image | +40% |
+| [Grok Imagine — Edit (Venice)](https://martllm.com/models/venice/grok-imagine-edit) | image | $0.015 / image | $0.021 / image | +40% |
+| [Qwen 3.6 35B A3B (E2EE)](https://martllm.com/models/qwen/e2ee-qwen3-6-35b-a3b) | text | $0.1074 / $0.6962 | $0.151 / $0.9788 | +41% |
+| [Claude Opus 4.8](https://martllm.com/models/anthropic/claude-opus-4.8) | text | $2.00 / $10.00 | $2.83 / $14.18 | +42% |
+| [Reflection: Beam 1.0 501B A23B](https://martllm.com/models/reflection/beam-1.0-501b-a23b) | text | $0.21 / $0.70 | $0.2982 / $0.8946 | in +42% / out +28% |
+| [Claude Sonnet 5](https://martllm.com/models/anthropic/claude-sonnet-5) | text | $0.72 / $3.60 | $1.03 / $5.14 | +43% |
+| [MiniMax Speech 02 HD TTS](https://martllm.com/models/minimax/tts-minimax-speech-02-hd) | speech | $0.075 / 1K chars | $0.1076 / 1K chars | +44% |
+| [GLM-4.7](https://martllm.com/models/z-ai/glm-4.7) | text | $0.20 / $0.875 | $0.2889 / $1.19 | in +44% / out +36% |
+| [ElevenLabs Turbo v2.5 TTS (Venice)](https://martllm.com/models/venice/elevenlabs-tts-turbo-v2-5) | speech | $0.0375 / 1K chars | $0.0545 / 1K chars | +45% |
+| [xAI v1 TTS](https://martllm.com/models/x-ai/tts-xai-v1) | speech | $0.01125 / 1K chars | $0.01635 / 1K chars | +45% |
+| [Claude Opus 4.6](https://martllm.com/models/anthropic/claude-opus-4.6) | text | $1.80 / $9.00 | $2.62 / $13.12 | +46% |
+| [Qwen 3.7 Plus](https://martllm.com/models/qwen/qwen3.7-plus) | text | $0.305 / $1.22 | $0.4462 / $1.78 | +46% |
+| [GPT-5.4 Pro](https://martllm.com/models/openai/gpt-5.4-pro) | text | $12.00 / $72.00 | $17.64 / $105.84 | +47% |
+| [Qwen 3 235B A22B Thinking 2507](https://martllm.com/models/qwen/qwen3-235b-a22b-thinking-2507) | text | $0.18 / $1.40 | $0.2646 / $2.06 | +47% |
+| [Chroma (Venice)](https://martllm.com/models/venice/chroma) | image | $0.005 / image | $0.00735 / image | +47% |
+| [Hunyuan Image 3.0 (Venice)](https://martllm.com/models/venice/hunyuan-image-v3) | image | $0.045 / image | $0.06615 / image | +47% |
+| [Tencent: Hy4](https://martllm.com/models/tencent/hy4) | text | $0.2961 / $0.8879 | $0.4379 / $1.31 | +48% |
+| [Claude Sonnet 4.5](https://martllm.com/models/anthropic/claude-sonnet-4.5) | text | $1.89 / $9.45 | $2.80 / $14.02 | +48% |
+| [Claude Sonnet 4.6](https://martllm.com/models/anthropic/claude-sonnet-4.6) | text | $1.44 / $7.20 | $2.14 / $10.71 | +49% |
+| [Wan 2.7 (Venice)](https://martllm.com/models/venice/wan-2.7) | image | $0.01688 / image | $0.0252 / image | +49% |
+| [LTX 2 Fast Text-to-Video](https://martllm.com/models/lightricks/ltx-2-fast-text-to-video) | video | $0.04667 / sec | $0.07 / sec | +50% |
+| [Veo 3 Fast Text-to-Video](https://martllm.com/models/google/veo3-fast-text-to-video) | video | $0.1155 / sec | $0.1732 / sec | +50% |
+| [LTX 2 19B Full Text-to-Video](https://martllm.com/models/lightricks/ltx-2-19b-full-text-to-video) | video | $0.0616 / sec | $0.0924 / sec | +50% |
+| [LongCat Text-to-Video](https://martllm.com/models/meituan/longcat-text-to-video) | video | $0.035 / sec | $0.0525 / sec | +50% |
+| [Veo 3 Full Text-to-Video](https://martllm.com/models/google/veo3-full-text-to-video) | video | $0.308 / sec | $0.462 / sec | +50% |
+| [LiquidAI: LFM2.5-24B-A2B](https://martllm.com/models/liquid/lfm-2.5-24b-a2b) | text | $0.035 / $0.49 | $0.0525 / $0.735 | +50% |
+| [Kimi K2.7 Code](https://martllm.com/models/moonshotai/kimi-k2.7-code) | text | $0.147 / $0.735 | $0.2205 / $1.03 | in +50% / out +40% |
+| [Wan 2.1 Pro Image-to-Video](https://martllm.com/models/wan/wan-2-1-pro-image-to-video) | video | $0.1027 / sec | $0.154 / sec | +50% |
+| [Wan 2.6 Ultra (image-to-video)](https://martllm.com/models/wan/wan-2-6-ultra-image-to-video) | video | $0.21 / sec | $0.315 / sec | +50% |
+| [Vidu Q3 Text-to-Video](https://martllm.com/models/vidu/vidu-q3-text-to-video) | video | $0.1353 / sec | $0.203 / sec | +50% |
+| [LTX 2 Full Text-to-Video](https://martllm.com/models/lightricks/ltx-2-full-text-to-video) | video | $0.06183 / sec | $0.09275 / sec | +50% |
+| [Kling V3 Standard Text-to-Video](https://martllm.com/models/kling/kling-v3-standard-text-to-video) | video | $0.077 / sec | $0.1159 / sec | +51% |
+| [Venice SD35](https://martllm.com/models/venice/sd35) | image | $0.0045 / image | $0.006825 / image | +52% |
+| [DeepSeek V4 Flash](https://martllm.com/models/deepseek/deepseek-v4-flash) | text | $0.0513 / $0.1026 | $0.0693 / $0.1559 | in +35% / out +52% |
+| [GLM-5](https://martllm.com/models/z-ai/glm-5) | text | $0.33 / $1.06 | $0.5016 / $1.56 | in +52% / out +48% |
+| [ElevenLabs Sound Effects v2 (Venice)](https://martllm.com/models/venice/elevenlabs-sound-effects-v2) | music | $0.00115 / sec | $0.001755 / sec | +53% |
+| [Flux 1.1 Pro (Venice, legacy)](https://martllm.com/models/venice/flux-1.1-pro) | image | $0.01633 / image | $0.0252 / image | +54% |
+| [Qwen 3 Coder 480B Turbo](https://martllm.com/models/qwen/qwen3-coder-turbo) | text | $0.231 / $0.99 | $0.3565 / $1.53 | +54% |
+| [Wan 2.2 A14B Text-to-Video](https://martllm.com/models/wan/wan-2-2-a14b-text-to-video) | video | $0.14 / video | $0.218 / video | +56% |
+| [Cosmos Predict (image-to-video)](https://martllm.com/models/nvidia/cosmos-predict-image-to-video) | video | $0.5607 / video | $0.8731 / video | +56% |
+| [Runway Gen-4 Aleph](https://martllm.com/models/runway/runway-gen4-aleph) | video | $0.35 / video | $0.545 / video | +56% |
+| [MiniMax M3.1 Flash](https://martllm.com/models/minimax/minimax-m3-1-flash) | text | $0.02925 / $0.117 | $0.04568 / $0.1827 | +56% |
+| [Stable Audio 2.5 (Venice)](https://martllm.com/models/venice/stable-audio-25) | music | $0.1069 / track | $0.1674 / track | +57% |
+| [ACE-Step 1.5 (Venice)](https://martllm.com/models/venice/ace-step-15) | music | $0.0135 / track | $0.02125 / track | +57% |
+| [Veo3.1 Fast (image-to-video)](https://martllm.com/models/google/veo3-1-fast-image-to-video) | video | $0.099 / sec | $0.1559 / sec | +57% |
+| [Kling V3 Standard (image-to-video)](https://martllm.com/models/kling/kling-v3-standard-image-to-video) | video | $0.07 / sec | $0.1103 / sec | +57% |
+| [Wan 2.5 Preview Text-to-Video](https://martllm.com/models/wan/wan-2-5-preview-text-to-video) | video | $0.055 / sec | $0.08662 / sec | +57% |
+| [Longcat Distilled (image-to-video)](https://martllm.com/models/meituan/longcat-distilled-image-to-video) | video | $0.009 / sec | $0.01418 / sec | +58% |
+| [Orpheus TTS](https://martllm.com/models/canopy-labs/tts-orpheus) | speech | $0.03438 / 1K chars | $0.0545 / 1K chars | +59% |
+| [Inworld 1.5 Max TTS](https://martllm.com/models/inworld/tts-inworld-1-5-max) | speech | $0.006875 / 1K chars | $0.0109 / 1K chars | +59% |
+| [NVIDIA Nemotron 3 Nano 30B](https://martllm.com/models/nvidia/nemotron-3-nano-30b-a3b) | text | $0.0495 / $0.198 | $0.07875 / $0.315 | +59% |
+| [Flux 2 Pro (Venice)](https://martllm.com/models/venice/flux-2-pro) | image | $0.0165 / image | $0.02625 / image | +59% |
+| [Claude Fable 5.2](https://martllm.com/models/anthropic/claude-fable-5.2) | text | $4.00 / $20.00 | $6.38 / $31.92 | +60% |
+| [Mistral Small 4](https://martllm.com/models/mistralai/mistral-small-4) | text | $0.108 / $0.432 | $0.1732 / $0.693 | +60% |
+| [Claude Opus 5.5](https://martllm.com/models/anthropic/claude-opus-5.5) | text | $1.28 / $6.40 | $2.06 / $10.29 | +61% |
+| [Seedance 1.5 Pro Text-to-Video](https://martllm.com/models/bytedance/seedance-1-5-pro-text-to-video) | video | $0.0377 / sec | $0.0609 / sec | +62% |
+| [Qwen 3.8 Max](https://martllm.com/models/qwen/qwen-3-8-max) | text | $0.175 / $0.525 | $0.2888 / $0.8662 | +65% |
+| [DeepSeek V3.2](https://martllm.com/models/deepseek/deepseek-v3.2) | text | $0.0312 / $0.0456 | $0.04253 / $0.0756 | in +36% / out +66% |
+| [Claude Haiku 4.5](https://martllm.com/models/anthropic/claude-haiku-4.5) | text | $0.62 / $3.10 | $1.05 / $5.25 | +69% |
+| [ElevenLabs Scribe v2 (STT)](https://martllm.com/models/elevenlabs/elevenlabs-scribe-v2) | transcription | $0.004509 / minute | $0.007755 / minute | +72% |
+| [inclusionAI: Ling 3.1 Flash](https://martllm.com/models/inclusionai/ling-3.1-flash) | text | $0.0324 / $0.0972 | $0.05607 / $0.1682 | +73% |
+| [Whisper 1 (Venice, legacy alias)](https://martllm.com/models/venice/whisper-1) | transcription | $0.003 / minute | $0.005232 / minute | +74% |
+| [Kokoro Text to Speech (Venice)](https://martllm.com/models/venice/kokoro-tts) | speech | $0.00175 / 1K chars | $0.003052 / 1K chars | +74% |
+| [Happyhorse 1.0 (reference-to-video)](https://martllm.com/models/happyhorse/happyhorse-1-0-reference-to-video) | video | $0.09198 / sec | $0.161 / sec | +75% |
+| [Kling O3 4K Text-to-Video](https://martllm.com/models/kling/kling-o3-4k-text-to-video) | video | $0.278 / sec | $0.4865 / sec | +75% |
+| [Kling V3 4K Text-to-Video](https://martllm.com/models/kling/kling-v3-4k-text-to-video) | video | $0.278 / sec | $0.4865 / sec | +75% |
+| [Runway Gen-4 Turbo](https://martllm.com/models/runway/runway-gen4-turbo) | video | $0.0405 / sec | $0.07087 / sec | +75% |
+| [Seedance 2.0 (reference-to-video)](https://martllm.com/models/bytedance/seedance-2-0-reference-to-video) | video | $0.0528 / sec | $0.0924 / sec | +75% |
+| [Veo3.1 Full (image-to-video)](https://martllm.com/models/google/veo3-1-full-image-to-video) | video | $0.264 / sec | $0.462 / sec | +75% |
+| [Veo 3.1 Full Text-to-Video](https://martllm.com/models/google/veo3-1-full-text-to-video) | video | $0.264 / sec | $0.462 / sec | +75% |
+| [Kling O3.4k (image-to-video)](https://martllm.com/models/kling/kling-o3-4k-image-to-video) | video | $0.278 / sec | $0.4865 / sec | +75% |
+| [Kling O3.4k (reference-to-video)](https://martllm.com/models/kling/kling-o3-4k-reference-to-video) | video | $0.278 / sec | $0.4865 / sec | +75% |
+| [Ovi Image-to-Video](https://martllm.com/models/ovi/ovi-image-to-video) | video | $0.0264 / sec | $0.0462 / sec | +75% |
+| [Pixverse C1 (reference-to-video)](https://martllm.com/models/pixverse/pixverse-c1-reference-to-video) | video | $0.02598 / sec | $0.04546 / sec | +75% |
+| [Pixverse C1 Transition (transition)](https://martllm.com/models/pixverse/pixverse-c1-transition) | video | $0.02598 / sec | $0.04546 / sec | +75% |
+| [Pixverse V5.6 (image-to-video)](https://martllm.com/models/pixverse/pixverse-v5-6-image-to-video) | video | $0.1212 / sec | $0.2121 / sec | +75% |
+| [Qwen Image 2 Pro (image-to-image)](https://martllm.com/models/qwen/qwen-image-2-pro-edit) | image | $0.06 / image | $0.105 / image | +75% |
+| [Runway Gen-4.5](https://martllm.com/models/runway/runway-gen4-5) | video | $0.096 / sec | $0.168 / sec | +75% |
+| [Grok Imagine High Quality (Venice)](https://martllm.com/models/venice/grok-imagine-quality) | image | $0.015 / image | $0.02625 / image | +75% |
+| [Runway Gen-4.5 Text-to-Video (Venice)](https://martllm.com/models/venice/runway-gen4-5-text) | video | $0.096 / sec | $0.168 / sec | +75% |
+| [Wan 2.6 (image-to-video)](https://martllm.com/models/wan/wan-2-6-image-to-video) | video | $0.066 / sec | $0.1155 / sec | +75% |
+| [Wan 2.7 Text-to-Video](https://martllm.com/models/wan/wan-2-7-text-to-video) | video | $0.066 / sec | $0.1155 / sec | +75% |
+| [Grok Imagine 1.5 Image To Video Private (image-to-video)](https://martllm.com/models/x-ai/grok-imagine-1-5-image-to-video-private) | video | $0.054 / sec | $0.0945 / sec | +75% |
+| [Grok Imagine Image To Video Private (image-to-video)](https://martllm.com/models/x-ai/grok-imagine-image-to-video-private) | video | $0.036 / sec | $0.063 / sec | +75% |
+| [Grok Imagine Reference To Video Private (reference-to-video)](https://martllm.com/models/x-ai/grok-imagine-reference-to-video-private) | video | $0.036 / sec | $0.063 / sec | +75% |
+| [Wan 2.7 (image-to-video)](https://martllm.com/models/wan/wan-2-7-image-to-video) | video | $0.055 / sec | $0.09817 / sec | +78% |
+| [Kling O3 Pro (reference-to-video)](https://martllm.com/models/kling/kling-o3-pro-reference-to-video) | video | $0.09 / sec | $0.161 / sec | +79% |
+| [Llama 3.3 70B Instruct](https://martllm.com/models/meta-llama/llama-3.3-70b-instruct) | text | $0.147 / $0.1491 | $0.1108 / $0.2684 | in −25% / out +80% |
+| [Whisper Large V3 (Venice)](https://martllm.com/models/venice/whisper-large-v3) | transcription | $0.0027 / minute | $0.004905 / minute | +82% |
+| [Topaz Video Upscale](https://martllm.com/models/topaz-labs/topaz-video-upscale) | video | $0.09 / video | $0.1635 / video | +82% |
+| [Venice Music Gen (legacy alias)](https://martllm.com/models/venice/music-gen) | music | $0.018 / track | $0.0327 / track | +82% |
+| [GPT-4o](https://martllm.com/models/openai/gpt-4o) | text | $0.50 / $2.00 | $0.9187 / $3.67 | +84% |
+| [Kling O3 Pro Text-to-Video](https://martllm.com/models/kling/kling-o3-pro-text-to-video) | video | $0.0874 / sec | $0.161 / sec | +84% |
+| [Kling V3 Pro (image-to-video)](https://martllm.com/models/kling/kling-v3-pro-image-to-video) | video | $0.1045 / sec | $0.1925 / sec | +84% |
+| [Kling O3 Standard Text-to-Video](https://martllm.com/models/kling/kling-o3-standard-text-to-video) | video | $0.07 / sec | $0.1291 / sec | +84% |
+| [Kling V3 Pro Text-to-Video](https://martllm.com/models/kling/kling-v3-pro-text-to-video) | video | $0.1045 / sec | $0.1932 / sec | +85% |
+| [Grok 4.20 Beta](https://martllm.com/models/x-ai/grok-4.20-beta) | text | $0.375 / $0.75 | $0.7157 / $1.43 | in +91% / out +90% |
+| [LTX 2 v2.3 Fast Text-to-Video](https://martllm.com/models/lightricks/ltx-2-v2-3-fast-text-to-video) | video | $0.03667 / sec | $0.07 / sec | +91% |
+| [Seedance 2.0 Fast (reference-to-video)](https://martllm.com/models/bytedance/seedance-2-0-fast-reference-to-video) | video | $0.0385 / sec | $0.0735 / sec | +91% |
+| [Happyhorse 1.0 (image-to-video)](https://martllm.com/models/happyhorse/happyhorse-1-0-image-to-video) | video | $0.08432 / sec | $0.161 / sec | +91% |
+| [Happyhorse 1.1 (reference-to-video)](https://martllm.com/models/happyhorse/happyhorse-1-1-reference-to-video) | video | $0.08432 / sec | $0.161 / sec | +91% |
+| [Kling O3 Standard (reference-to-video)](https://martllm.com/models/kling/kling-o3-standard-reference-to-video) | video | $0.06782 / sec | $0.1295 / sec | +91% |
+| [Kling V3.4k (reference-to-video)](https://martllm.com/models/kling/kling-v3-4k-reference-to-video) | video | $0.2548 / sec | $0.4865 / sec | +91% |
+| [LongCat Distilled Text-to-Video](https://martllm.com/models/meituan/longcat-distilled-text-to-video) | video | $0.0099 / sec | $0.0189 / sec | +91% |
+| [PixVerse V5.6 Text-to-Video](https://martllm.com/models/pixverse/pixverse-v5-6-text-to-video) | video | $0.1254 / sec | $0.2394 / sec | +91% |
+| [Wan 2.5 Preview (image-to-video)](https://martllm.com/models/wan/wan-2-5-preview-image-to-video) | video | $0.0308 / sec | $0.0588 / sec | +91% |
+| [Seedance 2.0 Mini (reference-to-video)](https://martllm.com/models/bytedance/seedance-2-0-mini-reference-to-video) | video | $0.0242 / sec | $0.0462 / sec | +91% |
+| [NVIDIA Nemotron 3 Ultra 550B](https://martllm.com/models/nvidia/nemotron-3-ultra-550b-a55b) | text | $0.1375 / $0.6875 | $0.2625 / $1.31 | +91% |
+| [Wan 2.7 (reference-to-video)](https://martllm.com/models/wan/wan-2-7-reference-to-video) | video | $0.0605 / sec | $0.1155 / sec | +91% |
+| [GLM-4.6](https://martllm.com/models/z-ai/glm-4.6) | text | $0.0946 / $0.385 | $0.1806 / $0.735 | +91% |
+| [Ltx 2 V2.3 Full (image-to-video)](https://martllm.com/models/lightricks/ltx-2-v2-3-full-image-to-video) | video | $0.04856 / sec | $0.09272 / sec | +91% |
+| [Wan 2.6 Flash Image-to-Video](https://martllm.com/models/wan/wan-2-6-flash-image-to-video) | video | $0.02 / sec | $0.03822 / sec | +91% |
+| [Qwen3 0.6B TTS](https://martllm.com/models/qwen/tts-qwen3-0-6b) | speech | $0.03938 / 1K chars | $0.0763 / 1K chars | +94% |
+| [Kling 2.5 Turbo Pro (image-to-video)](https://martllm.com/models/kling/kling-2-5-turbo-pro-image-to-video) | video | $0.042 / sec | $0.0819 / sec | +95% |
+| [GPT Image 1.5 (Venice)](https://martllm.com/models/venice/gpt-image-1.5) | image | $0.091 / image | $0.1774 / image | +95% |
+| [xAI Speech to Text v1 (Venice)](https://martllm.com/models/venice/xai-stt-v1) | transcription | $0.00085 / minute | $0.001667 / minute | +96% |
+| [Gemini 3.1 Pro Preview](https://martllm.com/models/google/gemini-3.1-pro-preview) | text | $0.32 / $1.92 | $0.63 / $3.78 | +97% |
+| [MiMo-V2.5-Pro](https://martllm.com/models/xiaomi/mimo-v2.5-pro) | text | $0.3045 / $0.609 | $0.3197 / $1.20 | in +5% / out +97% |
+| [DeepSeek V4 Pro](https://martllm.com/models/deepseek/deepseek-v4-pro) | text | $0.18 / $0.30 | $0.2957 / $0.5914 | in +64% / out +97% |
+| [Gemma 4 31B IT](https://martllm.com/models/google/gemma-4-31b-it) | text | $0.0504 / $0.1512 | $0.09954 / $0.2986 | in +98% / out +97% |
+| [GPT-5.6 Luna](https://martllm.com/models/openai/gpt-5.6-luna) | text | $0.052 / $0.312 | $0.105 / $0.63 | +102% |
+| [Kling 2.1 Standard](https://martllm.com/models/kling/kling-2-1-standard-image-to-video) | video | $0.025 / sec | $0.0505 / sec | +102% |
+| [Mistral Small 3.2 24B Instruct](https://martllm.com/models/mistralai/mistral-small-3.2-24b-instruct) | text | $0.0345 / $0.092 | $0.0671 / $0.1864 | in +94% / out +103% |
+| [LTX 2 v2.3 Full Text-to-Video](https://martllm.com/models/lightricks/ltx-2-v2-3-full-text-to-video) | video | $0.04417 / sec | $0.09275 / sec | +110% |
+| [HappyHorse 1.0 Text-to-Video](https://martllm.com/models/happyhorse/happyhorse-1-0-text-to-video) | video | $0.1317 / sec | $0.2765 / sec | +110% |
+| [Kling V3 Turbo Standard (image-to-video)](https://martllm.com/models/kling/kling-v3-turbo-standard-image-to-video) | video | $0.06165 / sec | $0.1295 / sec | +110% |
+| [Longcat (image-to-video)](https://martllm.com/models/meituan/longcat-image-to-video) | video | $0.025 / sec | $0.0525 / sec | +110% |
+| [Happyhorse 1.1 (image-to-video)](https://martllm.com/models/happyhorse/happyhorse-1-1-image-to-video) | video | $0.07665 / sec | $0.161 / sec | +110% |
+| [Kling 2.5 Turbo Pro Text-to-Video](https://martllm.com/models/kling/kling-2-5-turbo-pro-text-to-video) | video | $0.039 / sec | $0.0819 / sec | +110% |
+| [Kling V3 Turbo Pro (image-to-video)](https://martllm.com/models/kling/kling-v3-turbo-pro-image-to-video) | video | $0.07665 / sec | $0.161 / sec | +110% |
+| [Ltx 2 V2.3 Fast (image-to-video)](https://martllm.com/models/lightricks/ltx-2-v2-3-fast-image-to-video) | video | $0.03335 / sec | $0.07004 / sec | +110% |
+| [Luma Uni 1 Max (image-to-image)](https://martllm.com/models/luma/luma-uni-1-max-edit) | image | $0.065 / image | $0.1365 / image | +110% |
+| [Pixverse C1 (image-to-video)](https://martllm.com/models/pixverse/pixverse-c1-image-to-video) | video | $0.02165 / sec | $0.04546 / sec | +110% |
+| [Pixverse V5.6 Transition (transition)](https://martllm.com/models/pixverse/pixverse-v5-6-transition) | video | $0.101 / sec | $0.2121 / sec | +110% |
+| [Venice Video Gen (legacy alias)](https://martllm.com/models/venice/video-gen) | video | $0.08 / sec | $0.168 / sec | +110% |
+| [Vidu Q3 (image-to-video)](https://martllm.com/models/vidu/vidu-q3-image-to-video) | video | $0.045 / sec | $0.0945 / sec | +110% |
+| [DeepSeek V4.1 Flash](https://martllm.com/models/deepseek/deepseek-v4.1-flash) | text | $0.01887 / $0.2098 | $0.04095 / $0.1575 | in +117% / out −25% |
+| [MiniMax Music 2.5 (Venice)](https://martllm.com/models/venice/minimax-music-v25) | music | $0.12 / track | $0.2616 / track | +118% |
+| [Meta: Muse Spark 1.2 Contributor](https://martllm.com/models/meta-llama/muse-spark-1.2-contributor) | text | $0.035 / $0.07 | $0.07875 / $0.1575 | +125% |
+| [Ministral 14B 3.0](https://martllm.com/models/mistralai/ministral-3-14b-instruct) | text | $0.046 / $0.046 | $0.108 / $0.108 | +135% |
+| [Flux 2 Max — Edit (Venice)](https://martllm.com/models/black-forest-labs/flux-2-max-edit) | image | $0.084 / image | $0.1995 / image | +138% |
+| [Google: Gemini 4 Hydrogen](https://martllm.com/models/google/gemini-4-hydrogen) | text | $0.285 / $1.43 | $0.6773 / $3.39 | +138% |
+| [fal.ai Wizper (STT)](https://martllm.com/models/fal-ai/fal-wizper) | transcription | $0.0027 / minute | $0.00654 / minute | +142% |
+| [ElevenLabs TTS Multilingual v2 (Venice audio)](https://martllm.com/models/venice/elevenlabs-tts-multilingual-v2) | music | $0.05175 / 1K chars | $0.1253 / 1K chars | +142% |
+| [ElevenLabs TTS v3 (Venice audio)](https://martllm.com/models/venice/elevenlabs-tts-v3) | music | $0.05175 / 1K chars | $0.1253 / 1K chars | +142% |
+| [MiniMax Music 2.6 (Venice)](https://martllm.com/models/venice/minimax-music-v26) | music | $0.108 / track | $0.2616 / track | +142% |
+| [MiniMax Music 2.0 (Venice)](https://martllm.com/models/venice/minimax-music-v2) | music | $0.018 / track | $0.0436 / track | +142% |
+| [MMAudio V2 Text-to-Audio (Venice)](https://martllm.com/models/venice/mmaudio-v2-text-to-audio) | music | $0.000414 / sec | $0.001003 / sec | +142% |
+| [Wan 2.6 Text-to-Video](https://martllm.com/models/wan/wan-2-6-text-to-video) | video | $0.07 / sec | $0.1743 / sec | +149% |
+| [Gemini 3.1 Flash TTS](https://martllm.com/models/google/tts-gemini-3-1-flash) | speech | $0.06563 / 1K chars | $0.1635 / 1K chars | +149% |
+| [Gemma 3 27B](https://martllm.com/models/google/gemma-3-27b-it) | text | $0.0216 / $0.054 | $0.05712 / $0.1428 | +164% |
+| [Nano Banana 2 Lite (image-to-image)](https://martllm.com/models/google/nano-banana-2-lite-edit) | image | $0.02 / image | $0.05418 / image | +171% |
+| [Recraft V4 Pro (Venice)](https://martllm.com/models/venice/recraft-v4-pro) | image | $0.0725 / image | $0.1979 / image | +173% |
+| [Luma Uni 1 (image-to-image)](https://martllm.com/models/luma/luma-uni-1-edit) | image | $0.0228 / image | $0.063 / image | +176% |
+| [Gemini 3.5 Flash](https://martllm.com/models/google/gemini-3.5-flash) | text | $0.255 / $1.53 | $0.7245 / $4.35 | +184% |
+| [Meta: Muse Spark 1.3 Contributor](https://martllm.com/models/meta-llama/muse-spark-1.3-contributor) | text | $0.036 / $0.072 | $0.105 / $0.21 | +192% |
+| [Kling 2.6 Pro (image-to-video)](https://martllm.com/models/kling/kling-2-6-pro-image-to-video) | video | $0.055 / sec | $0.1617 / sec | +194% |
+| [Kling 2.6 Pro Text-to-Video](https://martllm.com/models/kling/kling-2-6-pro-text-to-video) | video | $0.055 / sec | $0.1617 / sec | +194% |
+| [Gemini Omni Flash (image-to-video)](https://martllm.com/models/google/gemini-omni-flash-image-to-video) | video | $0.04988 / sec | $0.1496 / sec | +200% |
+| [Gemini Omni Flash (reference-to-video)](https://martllm.com/models/google/gemini-omni-flash-reference-to-video) | video | $0.04988 / sec | $0.1496 / sec | +200% |
+| [GPT Image 1.5 — Edit (Venice)](https://martllm.com/models/venice/gpt-image-1-5-edit) | image | $0.126 / image | $0.378 / image | +200% |
+| [Thinking Machines: Inkling](https://martllm.com/models/thinking-machines/inkling) | text | $0.28 / $1.13 | $0.861 / $3.49 | in +207% / out +208% |
+| [Google: Gemini 4 Argon](https://martllm.com/models/google/gemini-4-argon) | text | $0.24 / $1.20 | $0.756 / $3.78 | +215% |
+| [GPT-OSS 20B](https://martllm.com/models/openai/gpt-oss-20b) | text | $0.00504 / $0.0252 | $0.01606 / $0.08032 | +219% |
+| [MoonshotAI: Kimi K3.1 Pro](https://martllm.com/models/moonshotai/kimi-k3.1-pro) | text | $0.2307 / $8.07 | $0.777 / $3.88 | in +237% / out −52% |
+| [Qwen3 Coder 30B A3B Instruct](https://martllm.com/models/qwen/qwen3-coder-30b-a3b-instruct) | text | $0.015 / $0.06 | $0.05198 / $0.2079 | +247% |
+| [Parakeet ASR (Venice)](https://martllm.com/models/venice/parakeet-asr) | transcription | $0.0015 / minute | $0.005232 / minute | +249% |
+| [Qwen 3.8 27B](https://martllm.com/models/qwen/qwen-3-8-27b) | text | $0.0012 / $0.044 | $0.0042 / $0.0483 | in +250% / out +10% |
+| [GLM 4.5 Air](https://martllm.com/models/z-ai/glm-4.5-air) | text | $0.0221 / $0.1445 | $0.08379 / $0.5147 | in +279% / out +256% |
+| [Gemini 3.8 Flash](https://martllm.com/models/google/gemini-3.8-flash) | text | $0.066 / $0.33 | $0.252 / $1.26 | +282% |
+| [Qwen3.8 Flash](https://martllm.com/models/qwen/qwen3.8-flash) | text | $0.012 / $0.0376 | $0.04725 / $0.148 | +294% |
+| [Qwen3.5 Flash](https://martllm.com/models/qwen/qwen3.5-flash) | text | $0.025 / $0.10 | $0.1029 / $0.4116 | +312% |
+| [Qwen3.5 Plus](https://martllm.com/models/qwen/qwen3.5-plus) | text | $0.065 / $0.39 | $0.2675 / $1.61 | +312% |
+| [Gemini 3 Flash Preview](https://martllm.com/models/google/gemini-3-flash-preview) | text | $0.02 / $0.12 | $0.084 / $0.504 | +320% |
+| [ElevenLabs Music (Venice)](https://martllm.com/models/venice/elevenlabs-music) | music | $0.1725 / track | $0.7521 / track | +336% |
+| [Grok Imagine Text-to-Video](https://martllm.com/models/x-ai/grok-imagine-text-to-video) | video | $0.012 / sec | $0.06143 / sec | +412% |
+| [DeepSeek V4 Pro 0813](https://martllm.com/models/deepseek/deepseek-v4-pro-0813) | text | $0.06327 / $2.53 | $0.4402 / $1.33 | in +596% / out −47% |
+| [DeepSeek V4.1 Flash 1017](https://martllm.com/models/deepseek/deepseek-v4.1-flash-1017) | text | $0.00396 / $0.055 | $0.03087 / $0.126 | in +680% / out +129% |
+| [GLM 5.1](https://martllm.com/models/z-ai/glm-5.1) | text | $0.042 / $0.132 | $0.3307 / $1.04 | in +687% / out +688% |
+| [GLM 4.5](https://martllm.com/models/z-ai/glm-4.5) | text | $0.036 / $0.132 | $0.378 / $1.39 | +950% |
+| [GLM 5.3 Flash](https://martllm.com/models/z-ai/glm-5.3-flash) | text | $0.005985 / $0.01176 | $0.03276 / $0.126 | in +447% / out +971% |
+| [Nano Banana (Gemini 2.5 Flash Image)](https://martllm.com/models/google/gemini-2.5-flash-image) | image | $0.15 / $1.25 | $0.1606 / $16.07 | in +7% / out +1185% |
+| [Kimi K3](https://martllm.com/models/moonshotai/kimi-k3) | text | $0.016 / $1.28 | $0.2993 / $1.57 | in +1770% / out +23% |
+| [GLM 5.3](https://martllm.com/models/z-ai/glm-5.3) | text | $0.003495 / $0.07 | $0.07497 / $0.2772 | in +2045% / out +296% |
+| [Gemini 3.1 Flash Lite](https://martllm.com/models/google/gemini-3.1-flash-lite) | text | $0.005 / $0.03 | $0.1837 / $1.10 | +3575% |
+| [Gemini 3.7 Flash](https://martllm.com/models/google/gemini-3.7-flash) | text | $0.015 / $0.075 | $0.6221 / $3.11 | +4048% |
+| [FLUX.2 Klein 4B](https://martllm.com/models/black-forest-labs/flux.2-klein-4b) | image | $0.00015 / megapixel | $0.01145 / megapixel | +7530% |
+| [GLM-5.2](https://martllm.com/models/z-ai/glm-5.2) | text | $0.00042 / $0.264 | $0.05476 / $0.231 | in +12938% / out −12% |
+
+</details>
+
+
+# Changelog
+
+Price changes between daily snapshots of [`prices.json`](prices.json), newest first.
+"Official list price" = the model maker's price as carried in the catalog (see [SOURCES](README.md#sources)).
 "UberLLM price" = what a buyer can count on at snapshot time (per side, the higher of the best live seller and the listed price); it moves during the day.
 Text prices are $ per 1M input / output tokens. Every day's full table is in [`history/`](history/).
 
