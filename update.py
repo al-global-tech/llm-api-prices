@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""llm-api-prices updater: fetch the public UberLLM catalog, build prices.json /
+"""llm-api-prices updater: fetch the public MartLLM catalog, build prices.json /
 prices.csv / README.md / CHANGELOG.md / history/<day>.csv, diff against the last
 snapshot and commit the result to GitHub through the GraphQL API
 (createCommitOnBranch, so commits are signed by GitHub). Python 3.9+, stdlib only.
 
   python3 update.py --out DIR          build into DIR (no GitHub; DIR's own files are "previous")
-  python3 update.py --commit           build and commit to REPO (default PSA-Team-source/llm-api-prices)
+  python3 update.py --commit           build and commit to REPO (default al-global-tech/llm-api-prices)
   python3 update.py --commit --force   commit even if today's snapshot is already there
   python3 update.py --selftest         offline checks of the pricing and diff logic
 
@@ -36,14 +36,14 @@ import time
 import urllib.error
 import urllib.request
 
-API = os.environ.get("ULL_API", "https://api.uberllm.dev")
-SITE = "https://uberllm.dev"
-REPO = os.environ.get("REPO", "PSA-Team-source/llm-api-prices")
+API = os.environ.get("ULL_API", "https://api.martllm.com")
+SITE = "https://martllm.com"
+REPO = os.environ.get("REPO", "al-global-tech/llm-api-prices")
 BRANCH = os.environ.get("BRANCH", "main")
-UA = "llm-api-prices-updater/1.0 (+https://github.com/PSA-Team-source/llm-api-prices)"
+UA = "llm-api-prices-updater/1.0 (+https://github.com/al-global-tech/llm-api-prices)"
 HERE = os.path.dirname(os.path.abspath(__file__))
-MOVE = 0.10  # an UberLLM price move this large (either way) goes in the changelog
-CATALOG_SRC = "UberLLM catalog list price"
+MOVE = 0.10  # an MartLLM price move this large (either way) goes in the changelog
+CATALOG_SRC = "MartLLM catalog list price"
 NO_PAGE = " (the catalog does not record the vendor page this price was read from)"
 
 # Where a model maker publishes its own API prices, to check a list price against.
@@ -177,7 +177,7 @@ def media_official(m, ours):
     """The site's one official price for a media unit (web lib/market.ts
     mediaOfficialUsd): the catalog list when above ours, else media_ref (maker,
     then OpenRouter, then Fal) when at least 1% above ours. None = no official
-    price above what UberLLM charges (then none is claimed)."""
+    price above what MartLLM charges (then none is claimed)."""
     lst, ref = m.get("media_list_usd"), m.get("media_ref") or {}
     if not num(ours) or ours <= 0:
         return (lst, None) if num(lst) else (None, None)
@@ -193,7 +193,7 @@ def build_rows(models, v1):
     for m in models:
         cat = category(m)
         if m.get("nsfw") and cat not in ("text", "transcription", "embedding", "other"):
-            continue  # adult picture/video/sound models stay off public lists (as on uberllm.dev)
+            continue  # adult picture/video/sound models stay off public lists (as on martllm.com)
         mid = m["id"]
         v = v1.get(mid, {})
         r = dict.fromkeys(FIELDS)
@@ -230,8 +230,8 @@ def build_rows(models, v1):
                 r["video_rates"] = rates
         else:
             now = dict(m.get("price_now") or {})
-            # The UberLLM price is what a buyer can count on: per side, the higher of the board's
-            # best seller now and the catalog's listed price (min_*), the rule uberllm.dev uses
+            # The MartLLM price is what a buyer can count on: per side, the higher of the board's
+            # best seller now and the catalog's listed price (min_*), the rule martllm.com uses
             # (lib/market.ts priceHeld). The best seller does not take every request: on
             # 2026-11-12 Claude Opus 5.5 read $0.136 / $0.68 on the board while buyers were billed
             # about $1.20 / $6.00. When the listed side wins, the cached-input price is the
@@ -286,7 +286,7 @@ def gate(rows):
     when its input is more than 3x off the same model's other listings (date
     suffix, :web, e2ee copy). A per-unit media list price is suspect when it is
     more than 10x off the median of its category and unit. Suspect rows keep
-    the UberLLM price but lose the list price and every % below list, and get
+    the MartLLM price but lose the list price and every % below list, and get
     list_price_status = "unverified" with the reason; the rest get "ok" (or
     "none" when there is no official price at all)."""
     def lst(r):
@@ -357,7 +357,7 @@ def fetch():
     v1 = {m["id"]: m for m in (http(f"{API}/v1/models") or {}).get("data", [])}
     changes = http(f"{API}/api/v1/public/price-changes") or {}
     lm = live.get("models") or {}
-    # The live board's fields win, exactly as uberllm.dev merges them (lib/market.ts mergeLive).
+    # The live board's fields win, exactly as martllm.com merges them (lib/market.ts mergeLive).
     merged = [{**m, **lm.get(m["id"], {}), "listed_price": m.get("price_now")} for m in models["models"]]
     return merged, v1, changes
 
@@ -490,14 +490,14 @@ def changelog_entry(title, d, note=""):
     new = [r for r in d["new"] if pub(r)]
     if new:
         out += [f"**New models ({len(new)})**", "",
-                table(["Model", "Category", "Official price", "UberLLM price"],
+                table(["Model", "Category", "Official price", "MartLLM price"],
                       [[md_link(r), r["category"], price_cell(r, "list") or "–", price_cell(r, "uberllm") or "–"] for r in new]), ""]
     gone = [r for r in d["removed"] if pub(r)]
     if gone:
         out += [f"**No longer listed ({len(gone)})**: " + ", ".join(f"`{r['id']}`" for r in gone), ""]
     mv = [x for x in d["moves"] if pub(x[0])]
     if mv:
-        out += [f"<details><summary>UberLLM price moves of {MOVE * 100:.0f}% or more ({len(mv)})</summary>", "",
+        out += [f"<details><summary>MartLLM price moves of {MOVE * 100:.0f}% or more ({len(mv)})</summary>", "",
                 table(["Model", "Category", "Before", "After", "Change"],
                       [[md_link(r), r["category"], fmt_side(r, a), fmt_side(r, b), signed(c)] for r, a, b, c in mv]),
                 "", "</details>", ""]
@@ -535,11 +535,11 @@ def week_rows(changes, unverified=frozenset()):
 
 
 def seed_entry(changes, unverified=frozenset()):
-    """First CHANGELOG entry, from UberLLM's own daily snapshots before this repo existed."""
+    """First CHANGELOG entry, from MartLLM's own daily snapshots before this repo existed."""
     if not changes.get("from"):
         return ""
-    lines = [f"## {changes['from']} to {changes['to']} (UberLLM daily catalog snapshots, before this repo started)", "",
-             "From `GET https://api.uberllm.dev/api/v1/public/price-changes`. Text prices are $ per 1M input / output tokens.", ""]
+    lines = [f"## {changes['from']} to {changes['to']} (MartLLM daily catalog snapshots, before this repo started)", "",
+             "From `GET https://api.martllm.com/api/v1/public/price-changes`. Text prices are $ per 1M input / output tokens.", ""]
     wr = week_rows(changes, unverified)
     lst = sorted([w for w in wr if w[3] == "list"], key=lambda w: mag(w[6]))
     mv = sorted([w for w in wr if w[3] == "price" and abs(mag(w[6])) >= MOVE], key=lambda w: mag(w[6]))
@@ -554,7 +554,7 @@ def seed_entry(changes, unverified=frozenset()):
     if gone:
         lines += [f"**No longer listed ({len(gone)})**: " + ", ".join(f"`{c['model']}`" for c in gone), ""]
     if mv:
-        lines += [f"<details><summary>UberLLM price moves of {MOVE * 100:.0f}% or more ({len(mv)})</summary>", "",
+        lines += [f"<details><summary>MartLLM price moves of {MOVE * 100:.0f}% or more ({len(mv)})</summary>", "",
                   table(["Model", "Category", "Before", "After", "Change"], [[link(w), w[2], w[4], w[5], signed(w[6])] for w in mv]),
                   "", "</details>", ""]
     return "\n".join(lines) + "\n"
@@ -564,7 +564,7 @@ CHANGELOG_HEAD = """# Changelog
 
 Price changes between daily snapshots of [`prices.json`](prices.json), newest first.
 "Official list price" = the model maker's price as carried in the catalog (see [SOURCES](README.md#sources)).
-"UberLLM price" = what a buyer can count on at snapshot time (per side, the higher of the best live seller and the listed price); it moves during the day.
+"MartLLM price" = what a buyer can count on at snapshot time (per side, the higher of the best live seller and the listed price); it moves during the day.
 Text prices are $ per 1M input / output tokens. Every day's full table is in [`history/`](history/).
 
 """
@@ -604,17 +604,19 @@ def readme(rows, meta, changes):
     parts = [
         "# LLM API prices",
         "",
+        "*MartLLM was called UberLLM until November 2026; the `uberllm_*` column names stay as they are.*",
+        "",
         "An open, daily-updated dataset of AI API prices: the official list price of "
         f"{len(rows)} text, image, video, music and speech models next to the lowest live price on the "
-        "[UberLLM](https://uberllm.dev/models) market, how far below list that is, context length and capabilities.",
+        "[MartLLM](https://martllm.com/models) market, how far below list that is, context length and capabilities.",
         "",
         f"**Updated:** {meta['updated_at']} · **Models:** "
         + ", ".join(f"{counts[c]} {c}" for c in CATEGORIES if counts[c])
         + " · **Files:** [`prices.json`](prices.json), [`prices.csv`](prices.csv), [`CHANGELOG.md`](CHANGELOG.md), [`history/`](history/)",
         "",
-        "Disclosure: this repo is maintained by the team that runs UberLLM. The UberLLM column is our own "
+        "Disclosure: this repo is maintained by the team that runs MartLLM. The MartLLM column is our own "
         "price; the official column is the maker's price, sourced as described in [Sources](#sources). "
-        "Live prices: <https://uberllm.dev/models>.",
+        "Live prices: <https://martllm.com/models>.",
         "",
     ]
 
@@ -629,12 +631,12 @@ def readme(rows, meta, changes):
         return rs[:n]
 
     parts += ["## Cheapest right now", "",
-              "Lowest UberLLM price per category among models that can be called now. Text: $ per 1M input / output tokens. "
+              "Lowest MartLLM price per category among models that can be called now. Text: $ per 1M input / output tokens. "
               "Full list: [`prices.csv`](prices.csv).", ""]
     t = cheapest("text", "1M tokens", 15)
     if t:
         parts += ["### Text (chat) models", "",
-                  table(["Model", "Context", "Official price", "UberLLM price", "Below list"],
+                  table(["Model", "Context", "Official price", "MartLLM price", "Below list"],
                         [[md_link(r), f"{r['context_length'] // 1000}K" if r["context_length"] else "", price_cell(r, "list"),
                           price_cell(r, "uberllm"), pct_cell(r)] for r in t]), ""]
 
@@ -646,7 +648,7 @@ def readme(rows, meta, changes):
         parts += ["### Major model makers", "",
                   "<details><summary>OpenAI, Anthropic, Google, DeepSeek, xAI, Qwen, Moonshot, Z.ai, Mistral, Meta "
                   f"({len(flag)} models)</summary>", "",
-                  table(["Model", "Maker", "Context", "Official price", "UberLLM price", "Below list"],
+                  table(["Model", "Maker", "Context", "Official price", "MartLLM price", "Below list"],
                         [[md_link(r), r["maker"], f"{r['context_length'] // 1000}K" if r["context_length"] else "",
                           price_cell(r, "list"), price_cell(r, "uberllm"), pct_cell(r)] for r in flag]),
                   "", "</details>", ""]
@@ -657,7 +659,7 @@ def readme(rows, meta, changes):
         t = cheapest(cat, unit, 10)
         if t:
             parts += [f"### {title}", "",
-                      table(["Model", "Official price", "UberLLM price", "Below list"],
+                      table(["Model", "Official price", "MartLLM price", "Below list"],
                             [[md_link(r), price_cell(r, "list") or "–", price_cell(r, "uberllm"), pct_cell(r) or "–"] for r in t]), ""]
 
     review = [r for r in rows if r["list_price_status"] == "unverified" and not r["nsfw"]]
@@ -665,7 +667,7 @@ def readme(rows, meta, changes):
         parts += ["## Prices under review", "",
                   f"The catalog's official price for these {len(review)} models failed a sanity check (see "
                   "`list_price_review_reason`), so it is left out, with no % below list, until it is checked against the maker's own page. "
-                  "The UberLLM price is still listed.", "",
+                  "The MartLLM price is still listed.", "",
                   table(["Model", "Category", "Why"], [[md_link(r), r["category"], r["list_price_review_reason"]] for r in review]), ""]
 
     wr = week_rows(changes, {r["id"] for r in rows if r["list_price_status"] == "unverified"})
@@ -675,25 +677,25 @@ def readme(rows, meta, changes):
         mv = sorted([w for w in wr if w[3] == "price" and mag(w[6]) < 0], key=lambda w: mag(w[6]))[:10]
         link = lambda w: f"[{w[0].replace('|', '/')}]({SITE}/models/{w[1]})"  # noqa: E731
         parts += [f"## Biggest drops this week ({span})", "",
-                  "From UberLLM's daily catalog snapshots (`GET /api/v1/public/price-changes`). Text: $ per 1M input / output tokens, sorted by the larger of the two moves.", ""]
+                  "From MartLLM's daily catalog snapshots (`GET /api/v1/public/price-changes`). Text: $ per 1M input / output tokens, sorted by the larger of the two moves.", ""]
         if lst:
             parts += ["### Official list price cuts", "",
                       table(["Model", "Category", "Before", "After", "Change"], [[link(w), w[2], w[4], w[5], signed(w[6])] for w in lst]), ""]
         if mv:
-            parts += ["### UberLLM price drops", "",
+            parts += ["### MartLLM price drops", "",
                       table(["Model", "Category", "Before", "After", "Change"], [[link(w), w[2], w[4], w[5], signed(w[6])] for w in mv]), ""]
         parts += ["Every change, day by day: [`CHANGELOG.md`](CHANGELOG.md).", ""]
 
     parts += [
         "## Use the data", "",
         "Plain HTTPS, no key. Raw file URLs:", "",
-        "- JSON: `https://raw.githubusercontent.com/PSA-Team-source/llm-api-prices/main/prices.json`",
-        "- CSV: `https://raw.githubusercontent.com/PSA-Team-source/llm-api-prices/main/prices.csv`",
-        "- A past day: `https://raw.githubusercontent.com/PSA-Team-source/llm-api-prices/main/history/YYYY-MM-DD.csv`", "",
+        "- JSON: `https://raw.githubusercontent.com/al-global-tech/llm-api-prices/main/prices.json`",
+        "- CSV: `https://raw.githubusercontent.com/al-global-tech/llm-api-prices/main/prices.csv`",
+        "- A past day: `https://raw.githubusercontent.com/al-global-tech/llm-api-prices/main/history/YYYY-MM-DD.csv`", "",
         "Python (stdlib):", "",
         "```python",
         "import json, urllib.request",
-        "URL = \"https://raw.githubusercontent.com/PSA-Team-source/llm-api-prices/main/prices.json\"",
+        "URL = \"https://raw.githubusercontent.com/al-global-tech/llm-api-prices/main/prices.json\"",
         "data = json.load(urllib.request.urlopen(URL))",
         "chat = [m for m in data[\"models\"] if m[\"category\"] == \"text\" and m[\"available\"]",
         "        and m[\"list_output_usd_per_mtok\"] and \"tools\" in m[\"capabilities\"]]",
@@ -702,7 +704,7 @@ def readme(rows, meta, changes):
         "```", "",
         "JavaScript:", "",
         "```js",
-        "const res = await fetch(\"https://raw.githubusercontent.com/PSA-Team-source/llm-api-prices/main/prices.json\");",
+        "const res = await fetch(\"https://raw.githubusercontent.com/al-global-tech/llm-api-prices/main/prices.json\");",
         "const { updated_at, models } = await res.json();",
         "const video = models.filter(m => m.category === \"video\" && m.unit === \"second\");",
         "console.log(updated_at, video.sort((a, b) => a.uberllm_usd_per_unit - b.uberllm_usd_per_unit).slice(0, 5));",
@@ -710,30 +712,30 @@ def readme(rows, meta, changes):
         "jq: `jq '.models[] | select(.maker==\"anthropic\") | {id, list_input_usd_per_mtok, list_output_usd_per_mtok}' prices.json`", "",
         "### Fields", "",
         table(["Field", "Meaning"], [
-            ["`id`", "Model id, as used in the `model` field of an OpenAI-compatible request to UberLLM"],
+            ["`id`", "Model id, as used in the `model` field of an OpenAI-compatible request to MartLLM"],
             ["`category`", "text, image, video, music, speech, transcription, embedding or other (from the output modality)"],
             ["`unit`", "`1M tokens` for token-priced models; otherwise what one unit price buys: `image`, `megapixel`, `second`, `job` (one video or track), `minute`, `1K characters`"],
             ["`list_input_usd_per_mtok`, `list_output_usd_per_mtok`", "Official list price, USD per 1M tokens"],
-            ["`uberllm_input_usd_per_mtok`, `uberllm_output_usd_per_mtok`", "UberLLM price a buyer can count on at snapshot time, USD per 1M tokens: per side, the higher of the best live seller and the listed price"],
+            ["`uberllm_input_usd_per_mtok`, `uberllm_output_usd_per_mtok`", "MartLLM price a buyer can count on at snapshot time, USD per 1M tokens: per side, the higher of the best live seller and the listed price"],
             ["`list_usd_per_unit`, `uberllm_usd_per_unit`", "The same for per-unit (media) prices"],
-            ["`pct_below_list_*`", "100 × (1 − UberLLM / list), one decimal; negative = above list; empty = no list price"],
+            ["`pct_below_list_*`", "100 × (1 − MartLLM / list), one decimal; negative = above list; empty = no list price"],
             ["`list_price_source`, `list_price_source_url`, `list_price_checked`", "Where the official price comes from (see Sources)"],
             ["`list_price_hosts`", "JSON only: the published per-token prices of named hosts (Together AI, Fireworks, Bedrock, ...) for the model"],
-            ["`video_rates`", "JSON only: every per-second video price by resolution and sound, official and UberLLM"],
+            ["`video_rates`", "JSON only: every per-second video price by resolution and sound, official and MartLLM"],
             ["`vendor_pricing_page`", "The maker's own pricing page, to check a list price against"],
             ["`capabilities`", "tools, reasoning, vision, structured_outputs; video: text-to-video, image-to-video, sound"],
             ["`available`", "A request can be served right now"],
             ["`nsfw`", "Made for adult or unfiltered content (text only; adult image/video/sound models are not listed)"],
         ]), "",
         "## Sources", "",
-        "Every number comes from UberLLM's public catalog, read once a day by [`update.py`](update.py):", "",
-        "- `GET https://api.uberllm.dev/api/v1/public/models`: model list, context length, capabilities, official list prices, UberLLM prices.",
-        "- `GET https://api.uberllm.dev/api/v1/public/market/live`: the live market board (refreshed every 30 s). The text price published here is, per side, the higher of its best seller and the catalog's listed price, as on uberllm.dev's comparison pages.",
-        "- `GET https://api.uberllm.dev/v1/models`: the OpenAI-compatible model list (reasoning flag).",
-        "- `GET https://api.uberllm.dev/api/v1/public/price-changes`: the weekly diff used for \"Biggest drops this week\" and the first CHANGELOG entry.",
+        "Every number comes from MartLLM's public catalog, read once a day by [`update.py`](update.py):", "",
+        "- `GET https://api.martllm.com/api/v1/public/models`: model list, context length, capabilities, official list prices, MartLLM prices.",
+        "- `GET https://api.martllm.com/api/v1/public/market/live`: the live market board (refreshed every 30 s). The text price published here is, per side, the higher of its best seller and the catalog's listed price, as on martllm.com's comparison pages.",
+        "- `GET https://api.martllm.com/v1/models`: the OpenAI-compatible model list (reasoning flag).",
+        "- `GET https://api.martllm.com/api/v1/public/price-changes`: the weekly diff used for \"Biggest drops this week\" and the first CHANGELOG entry.",
         "",
         "Official list price, per row:", "",
-        "- `list_price_source` starting \"UberLLM catalog list price\": the direct (list) price the catalog carries for the model, meant to be the maker's "
+        "- `list_price_source` starting \"MartLLM catalog list price\": the direct (list) price the catalog carries for the model, meant to be the maker's "
         "own API price for first-party models (OpenAI, Anthropic, Google, ...) and the host's list price for open-weight models. "
         "The public catalog does not record which vendor page that number was read from, so `list_price_source_url` is empty and the source says so. "
         "`vendor_pricing_page` is the maker's pricing page to check it against (it is not where the number was read); for open-weight models, "
@@ -743,10 +745,10 @@ def readme(rows, meta, changes):
         "- `list_price_status`: `ok` = the official price passed the sanity check; `unverified` = it failed it (input under 1/40 of output, "
         "an output:input ratio more than 3x off the maker's other models, an input more than 3x off other listings of the same model, or a media price "
         "more than 10x off its category median), so the official price and every % below list are left empty until it is checked; `none` = no official price.",
-        "- No official price: the field is empty. A media model whose only known official price is not above what UberLLM charges gets no official price, "
+        "- No official price: the field is empty. A media model whose only known official price is not above what MartLLM charges gets no official price, "
         "so a saving is never claimed against a number we cannot show.", "",
-        "UberLLM price = the best offer a seller on the UberLLM market makes at snapshot time, fee included. Market prices move during the day; "
-        "the snapshot is a point in time, and <https://uberllm.dev/models> always has the current one.", "",
+        "MartLLM price = the best offer a seller on the MartLLM market makes at snapshot time, fee included. Market prices move during the day; "
+        "the snapshot is a point in time, and <https://martllm.com/models> always has the current one.", "",
         "Found a wrong official price? Open an issue with the vendor page that shows the right one.", "",
         "## How it updates", "",
         "`update.py` (Python stdlib only) runs once a day. It fetches the catalog, refuses an answer that lost more than 40% of the models, "
@@ -756,7 +758,7 @@ def readme(rows, meta, changes):
         "To run it from GitHub Actions instead, save this as `.github/workflows/update.yml` (also in [`docs/update.yml`](docs/update.yml)):", "",
         "```yaml", WORKFLOW_YML.rstrip(), "```", "",
         "## License", "",
-        "- Data (`prices.json`, `prices.csv`, `history/`, `CHANGELOG.md`): [CC BY 4.0](LICENSE-DATA). Credit: \"LLM API prices, PSA-Team-source/llm-api-prices (UberLLM)\" with a link to this repo.",
+        "- Data (`prices.json`, `prices.csv`, `history/`, `CHANGELOG.md`): [CC BY 4.0](LICENSE-DATA). Credit: \"LLM API prices, al-global-tech/llm-api-prices (MartLLM)\" with a link to this repo.",
         "- Code (`update.py`): [MIT](LICENSE).", "",
     ]
     return "\n".join(parts)
@@ -833,12 +835,12 @@ def build(prev_json, prev_changelog, today):
     now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     meta = {"updated_at": now, "snapshot_date": today, "count": len(rows),
             "source": f"{API}/api/v1/public/models", "license": "CC-BY-4.0",
-            "homepage": "https://github.com/PSA-Team-source/llm-api-prices"}
+            "homepage": "https://github.com/al-global-tech/llm-api-prices"}
     out = {**meta, "models": rows}
     if prev_rows:
         d = diff(prev_rows, rows)
         entry = changelog_entry(f"{today} (vs {(prev_json or {}).get('snapshot_date', 'previous snapshot')})", d)
-        log.info("diff: %d new, %d removed, %d list changes, %d UberLLM moves >= %d%%",
+        log.info("diff: %d new, %d removed, %d list changes, %d MartLLM moves >= %d%%",
                  len(d["new"]), len(d["removed"]), len(d["list"]), len(d["moves"]), MOVE * 100)
     else:
         entry = seed_entry(changes, {r["id"] for r in rows if r["list_price_status"] == "unverified"})
@@ -870,7 +872,7 @@ def selftest():
     t, v = rows
     assert t["pct_below_list_input"] == 50.0 and t["list_price_source"] == CATALOG_SRC + NO_PAGE and t["list_price_status"] == "ok"
     assert v["list_usd_per_unit"] == 0.2 and v["list_price_source"] == "Fal" and v["pct_below_list_unit"] == 50.0
-    # the UberLLM text price is the higher of the board and the listed price, per side (2026-11-12, Opus 5.5)
+    # the MartLLM text price is the higher of the board and the listed price, per side (2026-11-12, Opus 5.5)
     op = build_rows([{"id": "a/opus", **{**base, "list_input_usd_per_mtok": 4.0, "list_output_usd_per_mtok": 20.0,
                                          "price_now": {"input_usd_per_mtok": 0.136, "output_usd_per_mtok": 0.68, "cache_read_usd_per_mtok": 0.0068},
                                          "min_input_usd_per_mtok": 1.2, "min_output_usd_per_mtok": 6.0}}],
@@ -960,7 +962,7 @@ def main():
             log.info("no price changed since %s; no commit", prev.get("snapshot_date"))
             return 0
         c = gh_commit(files, (f"data: prices {today} ({n} models)",
-                              "Daily snapshot from https://api.uberllm.dev/api/v1/public/models by update.py."), tok)
+                              "Daily snapshot from https://api.martllm.com/api/v1/public/models by update.py."), tok)
         log.info("committed %s %s", c["oid"][:10], c["url"])
         return 0
     except Exception as e:  # noqa: BLE001 - logged, non-zero exit so cron mail / the next run notices
