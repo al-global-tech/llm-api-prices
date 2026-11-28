@@ -60,7 +60,6 @@ VENDOR_PAGES = {
     "qwen": "https://www.alibabacloud.com/help/en/model-studio/models",
     "black-forest-labs": "https://bfl.ai/pricing",
     "kling": "https://kling.ai/dev/pricing",
-    "fal-ai": "https://fal.ai/pricing",
     "elevenlabs": "https://elevenlabs.io/pricing/api",
     "venice": "https://docs.venice.ai/overview/pricing",
 }
@@ -176,7 +175,7 @@ def capabilities(m, v1):
 def media_official(m, ours):
     """The site's one official price for a media unit (web lib/market.ts
     mediaOfficialUsd): the catalog list when above ours, else media_ref (maker,
-    then OpenRouter, then Fal) when at least 1% above ours. None = no official
+    then OpenRouter) when at least 1% above ours. None = no official
     price above what MartLLM charges (then none is claimed)."""
     lst, ref = m.get("media_list_usd"), m.get("media_ref") or {}
     if not num(ours) or ours <= 0:
@@ -740,7 +739,7 @@ def readme(rows, meta, changes):
         "The public catalog does not record which vendor page that number was read from, so `list_price_source_url` is empty and the source says so. "
         "`vendor_pricing_page` is the maker's pricing page to check it against (it is not where the number was read); for open-weight models, "
         "`list_price_hosts` has the named hosts' own prices.",
-        "- Any other `list_price_source` (for example `OpenRouter`, `Z.ai`, `Fal`, `Kling (Kuaishou)`, `Stability AI`): the catalog had no list of its own, so the "
+        "- Any other `list_price_source` (for example `OpenRouter`, `Z.ai`, `Kling (Kuaishou)`, `Stability AI`): the catalog had no list of its own, so the "
         "price was read from that public page (`list_price_source_url`) on `list_price_checked`.",
         "- `list_price_status`: `ok` = the official price passed the sanity check; `unverified` = it failed it (input under 1/40 of output, "
         "an output:input ratio more than 3x off the maker's other models, an input more than 3x off other listings of the same model, or a media price "
@@ -865,13 +864,13 @@ def selftest():
             "price_now": {"input_usd_per_mtok": 0.5, "output_usd_per_mtok": 2.0}}
     vid = {"display_name": "V", "output_modalities": ["video"], "media_unit": "second", "available": True,
            "media_price_now_usd": 0.1, "media_list_usd": 0.1,
-           "media_ref": {"usd": 0.2, "source": "Fal", "url": "https://fal.ai/x", "checked": "2026-11-10T00:00:00Z"}}
+           "media_ref": {"usd": 0.2, "source": "Maker", "url": "https://maker.example/x", "checked": "2026-11-10T00:00:00Z"}}
     adult = {**vid, "nsfw": True}
     rows = build_rows([{"id": "a/m", **base}, {"id": "b/v", **vid}, {"id": "c/x", **adult}], {})
     assert [r["id"] for r in rows] == ["a/m", "b/v"], rows  # adult video is never listed
     t, v = rows
     assert t["pct_below_list_input"] == 50.0 and t["list_price_source"] == CATALOG_SRC + NO_PAGE and t["list_price_status"] == "ok"
-    assert v["list_usd_per_unit"] == 0.2 and v["list_price_source"] == "Fal" and v["pct_below_list_unit"] == 50.0
+    assert v["list_usd_per_unit"] == 0.2 and v["list_price_source"] == "Maker" and v["pct_below_list_unit"] == 50.0
     # the MartLLM text price is the higher of the board and the listed price, per side (2026-11-12, Opus 5.5)
     op = build_rows([{"id": "a/opus", **{**base, "list_input_usd_per_mtok": 4.0, "list_output_usd_per_mtok": 20.0,
                                          "price_now": {"input_usd_per_mtok": 0.136, "output_usd_per_mtok": 0.68, "cache_read_usd_per_mtok": 0.0068},
@@ -879,7 +878,7 @@ def selftest():
                     {"a/opus": {"pricing": {"cache_read_usd": 0.06}}})[0]
     assert (op["uberllm_input_usd_per_mtok"], op["uberllm_output_usd_per_mtok"], op["uberllm_cache_read_usd_per_mtok"]) == (1.2, 6.0, 0.06), op
     assert op["pct_below_list_input"] == 70.0, op
-    assert v["list_price_source_url"] == "https://fal.ai/x" and v["list_price_status"] == "ok"
+    assert v["list_price_source_url"] == "https://maker.example/x" and v["list_price_status"] == "ok"
     # the sanity gate: $0.006 in / $0.50 out is not a price we can stand behind
     tx = lambda mid, i, o: {"id": mid, **{**base, "list_input_usd_per_mtok": i, "list_output_usd_per_mtok": o}}  # noqa: E731
     g = {r["id"]: r for r in build_rows([tx("d/v4-flash", 0.006, 0.5), tx("d/v4-flash-1017", 0.3, 1.2), tx("d/a", 1, 4), tx("d/b", 2, 8),
